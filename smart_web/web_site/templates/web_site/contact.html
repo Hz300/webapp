@@ -1,0 +1,32 @@
+{% extends "web_site/layout.html" %}
+{% block content%}
+<!-- contact section -->
+<section class="contact_section ">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="static/images/contact-img.jpg" class="box_img" alt="about img">
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <div class="form_container">
+            <div class="heading_container heading_center">
+              <h2>Get In Touch</h2>
+            </div>
+            
+                
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="btn_box">
+                  <button type="submit">SEND</button>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end contact section -->
+{%endblock%}
