@@ -7,6 +7,8 @@ from .models import SmrtProperties
 
  # Create your views here.
 
+class NewsletterForm(forms.Form):
+    email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
 
 class ContactForm(forms.Form):
     name = forms.CharField(label='Your Name', max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}))
@@ -15,13 +17,26 @@ class ContactForm(forms.Form):
     email = forms.EmailField(label='Email', widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
     message = forms.CharField(label='Message', widget=forms.Textarea(attrs={'class': 'message-box form-control', 'placeholder': 'Message'}))
 
+def handle_subscription(request):
+    if request.method == 'POST':
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            # Process the email (save to database, etc.)
+            # Redirect to a success page or any other desired page
+            return HttpResponseRedirect(reverse('index'))
+    else:
+        form = NewsletterForm()
+
+    return render(request, 'web_site/subscription.html', {'form': form})
 
 def index(request):
    if "data" not in request.session:
 
         # If not, create a new list
         request.session["data"] = []
-   if request.method == 'POST':
+   #comprobar que se esta enviando este formulario y no otro     
+   if 'Subscribe' in request.POST:
       # Take in the data the user submitted and save it as form
       form = ContactForm(request.POST)
        # Check if form data is valid (server-side)
