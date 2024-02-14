@@ -10,8 +10,8 @@
                 <div class="col-lg-10 col-md-11 mx-auto">
                   <div class="detail-box">
                     <h1>
-                      We Are A Financial Consulting Firm<br>
-                       Based In Mexico.
+                      A Holistic Approach To Business In Mexico,<br>
+                      Professional Expertise At Your Fingertips.
                     </h1>
                     <p>
                       We specialize in providing comprehensive financial and asset management services to individuals, businesses, and institutions.
@@ -73,19 +73,17 @@
         <h2 class="">
           Our Services
         </h2>
-        <p class="col-lg-8 px-0">
-          At Patrimonial SMART & Asociados, we offer personalized financial consulting and asset management
-           services to help our clients meet their financial goals. Whether you're planning for retirement,
-            managing your investment portfolio, creating an estate plan, or looking to grow your wealth,
-           our team of experienced professionals is here to guide you every step of the way.
+        <p class="col-lg-8 px-0">    
+          In Patrimonial Smart & Associates, we stand out for our excellence in offering a complete range of services designed to enhance your financial and asset portfolio. From intelligent investment strategies to personalized real estate solutions, as well as financial and business consultancy, we manage financial resources, structure investment projects, and provide services for foreigners.
         </p>
-      </div>
+        </div>
       <div class="service_container">
         <div class="carousel-wrap ">
           <div class="service_owl-carousel owl-carousel">
-            <div class="item">
-              <div class="box ">
-                <div class="img-box">
+            <a href="{%url 'services'%}" style="color: black">
+            <div class="item" >
+              <div class="box " style="background-color: ">
+                <div class="img-box" >
                   <img src="static/images/s1.png" alt="" />
                 </div>
                 <div class="detail-box">
@@ -93,31 +91,33 @@
                     Real estate
                   </h5>
                   <p>
-                    Navigate real estate with personalized solutions for 
-                    buying, selling, and investing, ensuring your journey 
+                    Ensuring your journey 
                     is guided by expertise and tailored strategies.
                   </p>
                 </div>
               </div>
             </div>
+            </a>
+            <a href="{%url 'services'%}" style="color: black">
             <div class="item">
-              <div class="box ">
+              <div class="box " style="background-color: ;">
                 <div class="img-box">
                   <img src="static/images/s4.png" alt="" />
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Investment Management
+                    Smart Investment
                   </h5>
                   <p>
-                    Achieve financial goals through personalized investment strategies,
-                     balancing strategic growth and prudent risk management for lasting financial success.
+                     Personalized investment strategies
                   </p>
                 </div>
               </div>
             </div>
+            </a>
+            <a href="{%url 'services'%}" style="color: black">
             <div class="item">
-              <div class="box ">
+              <div class="box " style="background-color: ;">
                 <div class="img-box">
                   <img src="static/images/s6.png" alt="" />
                 </div>
@@ -126,12 +126,12 @@
                     Insurance Solutions
                   </h5>
                   <p>
-                    Safeguard your future with comprehensive insurance, protecting assets,
-                     health, and loved ones against life's uncertainties through tailored coverage and expert guidance.
-                  </p>
+                    Safeguard your future with comprehensive insurance
                 </div>
               </div>
             </div>
+            </a>
+            <a href="{%url 'services'%}" style="color: black">
             <div class="item">
               <div class="box ">
                 <div class="img-box">
@@ -139,21 +139,21 @@
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Financial Advisory
+                    Financial Advisory and accountancy
                   </h5>
                   <p>
-                    Empower yourself with financial mastery through collaborative planning,
-                     creating personalized strategies that guide you towards lasting success in your financial journey.
+                financial mastery through collaborative planning.
                   </p>
                 </div>
               </div>
             </div>
+          </a>
           </div>
         </div>
       </div>
       <div class="btn-box">
-        <a href="service.html">
-          Read More
+        <a href="{% url 'contact'%}">
+          lets get in Touch
         </a>
       </div>
     </div>
@@ -182,7 +182,7 @@
               like retirement planning, investment management, and wealth growth.
                We cater to both Spanish and English speakers in México. Let us help you achieve financial success.
             </p>
-            <a href="about.html" class="">
+            <a href="{%url 'about'%}" class="">
               Read More
             </a>
           </div>
@@ -387,6 +387,27 @@
       </div>
     </div>
   </section>
+
+<script>
+$(document).ready(function(){
+  $(".service_owl-carousel").owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:2
+      },
+      1000:{
+        items:4
+      }
+    }
+  });
+});  
+</script>
 
   {% endblock %}
 

@@ -499,6 +499,11 @@ a:focus {
           align-items: center;
 }
 
+.service_section .box:hover {
+  background-color: #004445;
+  color: #ccc;
+}
+
 .service_section .box .img-box {
   width: 65px;
   height: 65px;

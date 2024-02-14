@@ -1,5 +1,6 @@
 {% extends "web_site/layout.html" %}
 {% block content%}
+
 <section class="service_section layout_padding" style="background-color: white;">
     <div class="container">
       <div class="heading_container heading_center ">
@@ -16,7 +17,7 @@
             <div class="item">
               <div class="box ">
                 <div class="img-box">
-                  <img src="images/s1.png" alt="" />
+                  <img src="static/images/s1.png" alt="" />
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -33,7 +34,7 @@
             <div class="item">
               <div class="box ">
                 <div class="img-box">
-                  <img src="images/s4.png" alt="" />
+                  <img src="static/images/s4.png" alt="" />
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -49,7 +50,7 @@
             <div class="item">
               <div class="box ">
                 <div class="img-box">
-                  <img src="images/s6.png" alt="" />
+                  <img src="static/images/s6.png" alt="" />
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -65,7 +66,7 @@
             <div class="item">
               <div class="box ">
                 <div class="img-box">
-                  <img src="images/s2.png" alt="" />
+                  <img src="static/images/s2.png" alt="" />
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -87,5 +88,32 @@
         </a>
       </div>
     </div>
+   
+    </section>
+  
   </section>
+  
+
+
+
+  <script>
+    $(document).ready(function(){
+      $(".service_owl-carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+          0:{
+            items:1
+          },
+          600:{
+            items:2
+          },
+          1000:{
+            items:4
+          }
+        }
+      });
+    });  
+    </script>
 {%endblock%}

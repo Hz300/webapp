@@ -88,3 +88,6 @@ def contact(request):
    return render(request, "web_site/contact.html", {
       "form": ContactForm(), "data": request.session["data"]
    })
+
+def faqs(request):
+    return render(request, "web_site/faqs.html")
