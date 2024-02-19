@@ -92,7 +92,9 @@
   }
 }
 
-
+.service_owl-carousel .item {
+  height: 300px; /* Adjust the height as per your design */
+}
 *,
 *::before,
 *::after {

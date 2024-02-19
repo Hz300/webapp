@@ -1,0 +1,362 @@
+{% extends "web_site/layout_es.html" %}
+{% block content%}
+
+<!-- sección del carrusel -->
+<div class="container py-4 px-5 hero-header mt-5 h-100 rounded-lg " style="background-color: rgba(0, 0, 0, 0.3)">
+    <div class="container my-0 py-0 ">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center text-lg-start p-4" >
+                <h1 class="display-3 text-white animated slideInLeft">Consultoría Financiera <br>Personalizada</h1>
+                <p class="text-white animated slideInLeft mb-4 pb-2">m et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Agendar una cita</a>
+            </div>
+            <div class="col-lg-6 text-center text-lg-end overflow">
+                <!--carousel starts-->
+                <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner overflow-hidden">
+                      <div class="carousel-item active" data-interval="2000">
+                        <img src="static/images/mannorcar.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item" data-interval="2000">
+                        <img src="static/images/accountant.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                      <div class="carousel-item" data-interval="2000">
+                        <img src="static/images/insurance.jpeg" class="d-block w-100" alt="...">
+                      </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- fin de la sección del carrusel -->
+  </div>
+  
+  <!-- sección de servicios -->
+
+  <section class="service_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2 class="">Nuestros Servicios</h2>
+            <p class="col-lg-8 px-0">    
+                En Patrimonial Smart & Asociados, nos destacamos por nuestra excelencia al ofrecer una amplia gama de servicios diseñados para mejorar su cartera financiera y de activos. Desde estrategias de inversión inteligentes hasta soluciones inmobiliarias personalizadas, así como consultoría financiera y empresarial, gestionamos recursos financieros, estructuramos proyectos de inversión y brindamos servicios para extranjeros.
+            </p>
+        </div>
+        <div class="service_container">
+            <div class="carousel-wrap">
+                <div class="service_owl-carousel owl-carousel">
+                    <a href="{%url 'services_es'%}" style="color: black">
+                        <div class="item">
+                            <div class="box d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                                <div class="img-box">
+                                    <img src="static/images/s1.png" alt="" />
+                                </div>
+                                <div class="detail-box text-center">
+                                    <h5>Bienes raíces</h5>
+                                    <p>Asegurando que tu viaje esté guiado por la experiencia y estrategias adaptadas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'services_es'%}" style="color: black">
+                        <div class="item">
+                            <div class="box d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                                <div class="img-box">
+                                    <img src="static/images/s4.png" alt="" />
+                                </div>
+                                <div class="detail-box text-center">
+                                    <h5>Inversión inteligente</h5>
+                                    <p>Estrategias de inversión personalizadas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'services_es'%}" style="color: black">
+                        <div class="item">
+                            <div class="box d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                                <div class="img-box">
+                                    <img src="static/images/s6.png" alt="" />
+                                </div>
+                                <div class="detail-box text-center">
+                                    <h5>Soluciones de seguros</h5>
+                                    <p>Salvaguarda tu futuro con seguros integrales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="{%url 'services_es'%}" style="color: black">
+                        <div class="item">
+                            <div class="box d-flex align-items-center justify-content-center" style="min-height: 300px;">
+                                <div class="img-box">
+                                    <img src="static/images/s2.png" alt="" />
+                                </div>
+                                <div class="detail-box text-center">
+                                    <h5>Asesoramiento financiero y contabilidad</h5>
+                                    <p>Dominio financiero a través de la planificación colaborativa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="btn-box">
+            <a href="{% url 'contact_es'%}">Comunícate con Nosotros</a>
+        </div>
+    </div>
+</section>
+
+  
+  <!-- fin de la sección de servicios -->
+  
+  <!-- sección sobre nosotros -->
+  
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box pr-md-2">
+            <div class="heading_container">
+              <h2 class="">
+                Sobre Nosotros
+              </h2>
+            </div>
+            <p class="detail_p_mt"> 
+            En Patrimonial SMART & Asociados, nos especializamos en gestión financiera, bienes raíces, inversiones y seguros. Nuestro equipo experimentado ofrece asesoramiento personalizado para ayudar a los clientes a alcanzar sus metas. Nos enfocamos en soluciones inteligentes para individuos y empresas, ofreciendo servicios como planificación de jubilación, gestión de inversiones y crecimiento patrimonial. Atendemos tanto a hispanohablantes como a angloparlantes en México. Permítenos ayudarte a alcanzar el éxito financiero.
+            </p>
+            <a href="{%url 'about_es'%}" class="">
+              Leer Más
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="static/images/about-img.jpg" class="box_img" alt="about img">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- fin de la sección sobre nosotros -->
+  
+  <!-- sección de equipo -->
+  
+  <section class="team_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Nuestro Equipo
+        </h2>
+        <p>
+          Presentamos el motor detrás de Patrimonial Smart: nuestro excepcional equipo. Con experiencia en bienes raíces, inversiones, seguros y asesoramiento financiero, estamos dedicados a tu éxito. Conoce a los rostros de excelencia que impulsan hacia adelante nuestros servicios.
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="static/images/t1.jpg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Cuauhtemoc Villaseñor
+              </h5>
+              <h6 class="">
+                supervisor
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="static/images/t2.jpg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Ricardo J. Ortega
+              </h5>
+              <h6 class="">
+                supervisor
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 mx-auto">
+          <div class="box">
+            <div class="img-box">
+              <img src="static/images/t3.jpg" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Jorge Sebastian Nuño
+              </h5>
+              <h6 class="">
+                supervisor
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- fin de la sección de equipo -->
+  
+  <!-- sección de contacto -->
+  <section class="contact_section ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box ">
+            <img src="static/images/contact-img.jpg" class="box_img" alt="about img">
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <div class="form_container">
+            <div class="heading_container heading_center">
+              <h2>Ponte en Contacto</h2>
+            </div>
+            <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="btn_box">
+                <button type="submit">ENVIAR</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- fin de la sección de contacto -->
+  
+  <!-- sección de clientes -->
+  
+  <section class="client_section layout_padding">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2>
+          Testimonio
+        </h2>
+        <hr>
+      </div>
+      <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <div class="client_container ">
+                  <div class="img-box">
+                    <img src="static/images/client.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Jone Mark
+                    </h5>
+                    <p>
+                      Los editores ahora utilizan Lorem Ipsum como su texto modelo predeterminado, y una búsqueda de 'lorem ipsum' descubrirá muchos sitios web aún en su infancia. Varias versiones han evolucionado a lo largo de los años, a veces por
+                    </p>
+                    <span>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <div class="client_container ">
+                  <div class="img-box">
+                    <img src="static/images/client.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Jone Mark
+                    </h5>
+                    <p>
+                      Los editores ahora utilizan Lorem Ipsum como su texto modelo predeterminado, y una búsqueda de 'lorem ipsum' descubrirá muchos sitios web aún en su infancia. Varias versiones han evolucionado a lo largo de los años, a veces por
+                    </p>
+                    <span>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-lg-7 col-md-9 mx-auto">
+                <div class="client_container ">
+                  <div class="img-box">
+                    <img src="images/client.jpg" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Jone Mark
+                    </h5>
+                    <p>
+                      Los editores ahora utilizan Lorem Ipsum como su texto modelo predeterminado, y una búsqueda de 'lorem ipsum' descubrirá muchos sitios web aún en su infancia. Varias versiones han evolucionado a lo largo de los años, a veces por
+                    </p>
+                    <span>
+                      <i class="fa fa-quote-left" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+            <span>
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+            <span>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </span>
+            <span class="sr-only">Siguiente</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+  $(document).ready(function(){
+    $(".service_owl-carousel").owlCarousel({
+      loop:true,
+      margin:10,
+      nav:true,
+      responsive:{
+        0:{
+          items:1
+        },
+        600:{
+          items:2
+        },
+        1000:{
+          items:4
+        }
+      }
+    });
+  });  
+  </script>
+  
+
+{%endblock%}

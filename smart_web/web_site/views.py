@@ -54,11 +54,41 @@ def index(request):
       "form": ContactForm(), 
    })
 
+def index_es(request):
+   if "data" not in request.session:
+
+        # If not, create a new list
+        request.session["data"] = []
+   #comprobar que se esta enviando este formulario y no otro     
+   if 'Subscribe' in request.POST:
+      # Take in the data the user submitted and save it as form
+      form = ContactForm(request.POST)
+       # Check if form data is valid (server-side)
+      if form.is_valid():
+         user = form.cleaned_data
+         request.session["data"] += [user]
+         return HttpResponseRedirect(reverse("index"))
+      else:
+
+            # If the form is invalid, re-render the page with existing information.
+            return render(request, "web_site/index_es.html", {
+                "form": form, "data": request.session["data"]
+            })
+   return render(request, "web_site/index_es.html", {
+      "form": ContactForm(), 
+   })
+
 def about(request):
    return render(request, "web_site/about.html")
 
+def about_es(request):
+   return render(request, "web_site/about_es.html")
+
 def services(request):
    return render(request, "web_site/services.html")
+
+def services_es(request):
+   return render(request, "web_site/services_es.html")
 
 def portfolio(request):
    return render(request, "web_site/portfolio.html",{
@@ -89,5 +119,43 @@ def contact(request):
       "form": ContactForm(), "data": request.session["data"]
    })
 
+def portfolio(request):
+   return render(request, "web_site/portfolio.html",{
+      "props": SmrtProperties.objects.all()
+   })
+
+def portfolio_es(request):
+   return render(request, "web_site/portfolio_es.html",{
+      "props": SmrtProperties.objects.all()
+   })
+
+def contact_es(request):
+   if "data" not in request.session:
+
+        # If not, create a new list
+        request.session["data"] = []
+   if request.method == 'POST':
+      # Take in the data the user submitted and save it as form
+      form = ContactForm(request.POST)
+       # Check if form data is valid (server-side)
+      if form.is_valid():
+         user = form.cleaned_data
+         request.session["data"] += [user]
+         return HttpResponseRedirect(reverse("contact_es"))
+      else:
+
+            # If the form is invalid, re-render the page with existing information.
+            return render(request, "web_site/contact_es.html", {
+                "form": form, "data": request.session["data"]
+            })
+
+   return render(request, "web_site/contact_es.html", {
+      "form": ContactForm(), "data": request.session["data"]
+   })
+
+
 def faqs(request):
     return render(request, "web_site/faqs.html")
+
+def faqs_es(request):
+    return render(request, "web_site/faqs_es.html")

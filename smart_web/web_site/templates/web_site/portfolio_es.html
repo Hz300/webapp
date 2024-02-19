@@ -1,0 +1,74 @@
+{% extends "web_site/layout_es.html" %}
+{% block content%}
+
+<div style="background-color: white;">
+    <section class="team_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              Nuestro Portafolio
+            </h2>
+            <p>
+              Construir y gestionar un portafolio de propiedades diversificado
+               requiere visión estratégica y gestión proactiva. Con Patrimonial Smart, 
+               nos aseguramos de que tus inversiones prosperen, 
+               ofreciendo soluciones personalizadas para optimizar tus activos inmobiliarios y asegurar un crecimiento a largo plazo.
+            </p>
+            <div class="search_bar">
+              <input type="text" placeholder="Buscar...">
+              <select name="location_filter" id="location_filter">
+                <option value="">Todas las Ubicaciones</option>
+                <option value="Nueva York">Nueva York</option>
+                <option value="Los Ángeles">Los Ángeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="San Francisco">San Francisco</option>
+                <!-- Agrega más opciones de ubicación según sea necesario -->
+              </select>
+              <select name="price_range_filter" id="price_range_filter">
+                <option value="">Rango de Precios</option>
+                <option value="0-100000">$0 - $100,000</option>
+                <option value="100000-200000">$100,000 - $200,000</option>
+                <option value="200000-300000">$200,000 - $300,000</option>
+                <!-- Agrega más opciones de rango de precios según sea necesario -->
+              </select>
+              <select name="property_type_filter" id="property_type_filter">
+                <option value="">Tipo de Propiedad</option>
+                <option value="Apartamento">Apartamento</option>
+                <option value="Casa">Casa</option>
+                <option value="Condominio">Condominio</option>
+                <!-- Agrega más opciones de tipo de propiedad según sea necesario -->
+              </select>
+              <button type="button">Filtrar</button>
+            </div>
+          </div>
+          
+          <div class="row">
+            {% for prop in props %}
+            <div class="col-md-4 col-sm-6 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      {{ prop.imb_Name }}
+                    </h5>
+                    <h6 class="">
+                      {{ prop.imb_State }}
+                    </h6>
+                    <h6 class="">
+                      {{ prop.imb_Description }}
+                    </h6>
+                    <h6 class="">
+                      {{ prop.imb_Price }}  {{ prop.imb_Currency }}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+      </section>
+    </div>
+    
+
+{%endblock%}
