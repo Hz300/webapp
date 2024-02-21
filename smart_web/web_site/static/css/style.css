@@ -93,6 +93,7 @@ a:focus {
           flex-direction: column;
 }
 
+
 .hero_area .hero_bg_box {
   position: absolute;
   top: 0;
@@ -120,6 +121,13 @@ a:focus {
   background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.1)));
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
 }
+
+@media (max-width: 767px) {
+  .hero_area {
+    min-height: auto; /* Remove the minimum height for small devices */
+  }
+}
+
 
 .sub_page .hero_area {
   min-height: auto;
@@ -229,11 +237,31 @@ a:focus {
   padding-right: 25px;
   padding-left: 25px;
 }
+.navbar-flex {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
 
 .navbar-brand {
   color: #ffffff;
   font-weight: bold;
   font-size: 24px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .navbar-brand {
+    text-align: center;
+    display: flex;
+    word-wrap: break-word;
+    padding: 2rem; /* Adjust padding for smaller devices */
+    max-width: 100%; /* Limit the maximum width */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-brand-name {
+    font-size: 1empx; /* Adjust the font size as per your preference */
+  }
 }
 
 .navbar-brand span {
@@ -241,7 +269,7 @@ a:focus {
 }
 
 .navbar-brand:hover {
-  color: inherit;
+  color: #ffffff;
 }
 
 .custom_nav-container {
