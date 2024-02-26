@@ -11,37 +11,27 @@ from .models import SMRTPROPERTIES, SMRTWEBFORM
 
 
 def index(request):
-   if "data" not in request.session:
-
-        # If not, create a new list
-        request.session["data"] = []
-   #comprobar que se esta enviando este formulario y no otro     
-   if 'Subscribe' in request.POST:
-      # Take in the data the user submitted and save it as form
-      form = ContactForm(request.POST)
-       # Check if form data is valid (server-side)
+   form = SMRTWEBFORMForm(request.POST)
+   if request.method == 'POST':
+      
       if form.is_valid():
-         user = form.cleaned_data
-         request.session["data"] += [user]
-         return HttpResponseRedirect(reverse("index"))
+            form.instance.frm_date = datetime.now()
+            form.save()
+            return redirect('index')  # Redirect to a success page
       else:
-
-            # If the form is invalid, re-render the page with existing information.
-            return render(request, "web_site/index.html", {
-                "form": form, "data": request.session["data"]
-            })
-   return render(request, "web_site/index.html", {
-      "form": ContactForm(), 
-   })
+         form = SMRTWEBFORMForm()
+    
+   return render(request, "web_site/index.html", {'form': form})
 
 class SMRTWEBFORMForm(forms.ModelForm):
     frm_fcont = forms.BooleanField(initial=True, required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
     
     # Define choices for 'serv' field
     SERVICE_CHOICES = [
-        ('option1', 'Option 1'),
-        ('option2', 'Option 2'),
-        ('option3', 'Option 3'),
+        ('Bienes raices', 'Bienes raices'),
+        ('Inversion', 'Inversion'),
+        ('Seguros', 'Seguros'),
+        ('Contabilidad', 'Contabilidad'),
     ]
 
     frm_serv = forms.MultipleChoiceField(
@@ -57,7 +47,7 @@ class SMRTWEBFORMForm(forms.ModelForm):
             'frm_fname': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}),
             'frm_phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Teléfono'}),
             'frm_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Correo electrónico'}),
-            'frm_messag': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Mensaje'}),
+            'frm_messag': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Mensaje'}),
         }
 
 def index_es(request):
@@ -84,9 +74,15 @@ def services(request):
 def services_es(request):
    return render(request, "web_site/services_es.html")
 
+def real_state_es(request):
+   return render(request, "web_site/real_state_es.html")
+
+def smart_investment_es(request):
+   return render(request, "web_site/smart_investment_es.html")
+
 def portfolio(request):
    return render(request, "web_site/portfolio.html",{
-      "props": SmrtProperties.objects.all()
+      "props": SMRTPROPERTIES.objects.all()
    })
 
 def contact(request):
@@ -96,7 +92,7 @@ def contact(request):
         request.session["data"] = []
    if request.method == 'POST':
       # Take in the data the user submitted and save it as form
-      form = ContactForm(request.POST)
+      form = SMRTWEBFORMForm(request.POST)
        # Check if form data is valid (server-side)
       if form.is_valid():
          user = form.cleaned_data
@@ -110,46 +106,39 @@ def contact(request):
             })
 
    return render(request, "web_site/contact.html", {
-      "form": ContactForm(), "data": request.session["data"]
+      "form": SMRTWEBFORMForm(), "data": request.session["data"]
    })
 
 def portfolio(request):
    return render(request, "web_site/portfolio.html",{
-      "props": SmrtProperties.objects.all()
+      "props": SMRTPROPERTIES.objects.all()
    })
 
 def portfolio_es(request):
    return render(request, "web_site/portfolio_es.html",{
-      "props": SmrtProperties.objects.all()
+      "props": SMRTPROPERTIES.objects.all()
    })
 
 def contact_es(request):
-   if "data" not in request.session:
-
-        # If not, create a new list
-        request.session["data"] = []
-   if request.method == 'POST':
-      # Take in the data the user submitted and save it as form
-      form = ContactForm(request.POST)
-       # Check if form data is valid (server-side)
-      if form.is_valid():
-         user = form.cleaned_data
-         request.session["data"] += [user]
-         return HttpResponseRedirect(reverse("contact_es"))
-      else:
-
-            # If the form is invalid, re-render the page with existing information.
-            return render(request, "web_site/contact_es.html", {
-                "form": form, "data": request.session["data"]
-            })
-
-   return render(request, "web_site/contact_es.html", {
-      "form": ContactForm(), "data": request.session["data"]
-   })
-
+    form = SMRTWEBFORMForm()  # Define form outside the conditional block
+    
+    if request.method == 'POST':
+        form = SMRTWEBFORMForm(request.POST)
+        if form.is_valid():
+            form.instance.frm_date = datetime.now()
+            form.save()
+            return redirect('contact_es')  # Redirect to a success page
+    
+    return render(request, "web_site/contact_es.html", {'form': form})
 
 def faqs(request):
     return render(request, "web_site/faqs.html")
 
 def faqs_es(request):
     return render(request, "web_site/faqs_es.html")
+
+def insurance_es(request):
+   return render(request, "web_site/insurance_es.html")
+
+def accountant_es(request):
+   return render(request, "web_site/accountant_es.html")

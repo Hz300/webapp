@@ -15,6 +15,9 @@ urlpatterns = [
     path("contact_es", views.contact_es, name="contact_es"),
     path("faqs", views.faqs, name="faqs"),
     path("faqs_es", views.faqs_es, name="faqs_es"),
-    
+    path("real_state_es", views.real_state_es, name="real_state_es"),
+    path("smart_investment_es", views.smart_investment_es, name="smart_investment_es"),
+    path("insurance_es", views.insurance_es, name="insurance_es"),
+    path("accountant_es", views.accountant_es, name="accountant_es"),
 
     ]

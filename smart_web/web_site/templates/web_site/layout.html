@@ -148,18 +148,7 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <div class="info_form">
-              <h5>
-                NEWSLETTER
-              </h5>
-              <form action="{% url 'index' %}" method="post">
-                {% csrf_token %}
-                {{ form.EmailField }}
-                <button type="submit">Subscribe</button>
-            </form>
-            </div>
-          </div>
+          
           <div class="col-lg-4 col-md-6">
             <div class="info_detail">
               <h5>

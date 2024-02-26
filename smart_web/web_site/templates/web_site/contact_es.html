@@ -19,11 +19,43 @@
 
 
             <form method="post">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <div class="btn_box">
-                  <button type="submit">ENVIAR</button>
-                </div>
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="{{ form.frml_name.id_for_label }}">Apellido:</label>
+                  {{ form.frml_name }}
+              </div>
+              <div class="form-group">
+                  <label for="{{ form.frm_fname.id_for_label }}">Nombre:</label>
+                  {{ form.frm_fname }}
+              </div>
+              <div class="form-group">
+                  <label for="{{ form.frm_phone.id_for_label }}">Teléfono:</label>
+                  {{ form.frm_phone }}
+              </div>
+              <div class="form-group">
+                  <label for="{{ form.frm_email.id_for_label }}">Correo electrónico:</label>
+                  {{ form.frm_email }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.frm_serv.id_for_label }}">Servicio:</label>
+    <select class="custom-select" id="{{ form.frm_serv.id_for_label }}" name="{{ form.frm_serv.html_name }}">
+        <option selected>Seleccione el servicio...</option>
+        {% for value, label in form.frm_serv.field.choices %}
+            <option value="{{ value }}">{{ label }}</option>
+        {% endfor %}
+    </select>
+              
+              </div>
+              <div class="form-group">
+                  <label for="{{ form.frm_messag.id_for_label }}">Mensaje:</label>
+                  {{ form.frm_messag }}
+              </div>
+              <div class="form-group form-check">
+                  {{ form.frm_fcont }}
+                  <label class="form-check-label" for="{{ form.frm_fcont.id_for_label }}">Aceptar términos y condiciones</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
           </div>
         </div>
       </div>

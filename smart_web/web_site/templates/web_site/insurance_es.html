@@ -1,0 +1,156 @@
+{% extends "web_site/layout_es.html" %}
+{% block content%}
+<div class="container-fluid" style="">
+  <div class="row">
+      <!-- Images on the left -->
+      <div class="col-md-6 p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div class="d-flex flex-column justify-content-center align-items-center h-100">
+              <img src="/static/images/insurance.jpeg" class=" w-100 m-2" alt="...">
+              <img src="/static/images/insurance3.avif" class="w-100 m-2" alt="...">
+              <img src="/static/images/insurance2.png" class="w-100 m-2" alt="...">
+              <img src="/static/images/h1.jpeg" class="w-100 m-2" alt="...">
+          </div>
+      </div>
+
+
+      <!-- Services on the right -->
+      <div class="col-md-6" style="background-color: white;">
+          <h1 class="m-4 text-center"><b>ASESORÍA FINANCIERA Y SEGUROS</b></h1>
+          <p class="text-center p-3">En Patrimonial Smart & Asociados, nos enorgullece ofrecer un servicio integral de asesoría financiera y seguros, adaptado a sus necesidades individuales y al estilo de vida que usted desea proteger. Nuestra dedicación se centra en proporcionar una protección sólida y personalizada en una variedad de áreas clave:</p>
+
+          <!-- Seguros para el Retiro -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Seguros para el Retiro</b></h5>
+                  <a href="#collapse1" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse1">
+                      <p class="card-text p-3">Nuestros expertos en seguros para el retiro le ayudarán a planificar y asegurar un futuro financiero sólido y seguro. Trabajamos con usted para diseñar estrategias de inversión que le proporcionen un flujo de ingresos estable y cómodo durante sus años dorados.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Seguros de Vida con Máxima Protección -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Seguros de Vida con Máxima Protección</b></h5>
+                  <a href="#collapse2" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse2">
+                      <p class="card-text p-3">Ofrecemos una amplia gama de seguros de vida diseñados para brindarle la máxima protección del mercado. Desde pólizas de vida permanentes hasta seguros de vida a término, nos aseguramos de que usted y sus seres queridos estén completamente protegidos en caso de cualquier eventualidad.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Educación para sus Hijos -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Educación para sus Hijos</b></h5>
+                  <a href="#collapse3" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse3">
+                      <p class="card-text p-3">Garantizamos un respaldo financiero sólido para la educación de sus pequeños genios. Nuestros seguros educativos están diseñados para brindarle la tranquilidad de que sus hijos tendrán acceso a las mejores oportunidades de aprendizaje, sin importar qué ocurra en el camino.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Gastos Médicos Personalizados -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Gastos Médicos Personalizados</b></h5>
+                  <a href="#collapse4" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse4">
+                      <p class="card-text p-3">Diseñamos seguros médicos que se ajustan a sus necesidades individuales, convirtiendo la atención médica en una experiencia a la medida. Ya sea que prefiera la comodidad de un hospital privado o la atención personalizada de un médico de confianza, nos aseguramos de que su cobertura médica refleje su estilo de vida único.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Protección Integral para Negocios -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Protección Integral para Negocios</b></h5>
+                  <a href="#collapse5" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse5">
+                      <p class="card-text p-3">Desde pequeñas empresas hasta corporaciones multinacionales, ofrecemos una gama completa de seguros comerciales para proteger sus activos y mitigar riesgos. Nos especializamos en seguros para negocios, flotillas de automóviles y tractocamiones, asegurando que su empresa esté respaldada con una cobertura adaptada a sus necesidades específicas.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Seguros de Autos y Motocicletas de Uso Particular -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Seguros de Autos y Motocicletas de Uso Particular</b></h5>
+                  <a href="#collapse6" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse6">
+                      <p class="card-text p-3">Entendemos que cada vehículo particular es único, por eso ofrecemos seguros diseñados específicamente para adaptarse a sus necesidades individuales. Ya sea para su automóvil familiar que lo lleva a la oficina todos los días o su motocicleta de recreación que lo acompaña en sus aventuras de fin de semana, nos aseguramos de que cada viaje esté respaldado por una cobertura que se ajuste perfectamente a sus necesidades y estilo de vida.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Flotillas de Automóviles y Tractocamiones -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Flotillas de Automóviles y Tractocamiones</b></h5>
+                  <a href="#collapse7" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse7">
+                      <p class="card-text p-3">Para nosotros, la protección de sus flotillas de automóviles y tractocamiones es una prioridad absoluta. Nuestros seguros están diseñados para brindar una cobertura completa y adaptada a las necesidades específicas de su flotilla. En cada viaje, garantizamos que esté respaldado por una póliza que se adapte perfectamente a las características de sus vehículos comerciales, protegiendo sus activos y mitigando riesgos en el camino.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Seguros de Casa Habitación y Hoteles -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Seguros de Casa Habitación y Hoteles</b></h5>
+                  <a href="#collapse8" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse8">
+                      <p class="card-text p-3">Protegemos su inversión en bienes raíces con seguros diseñados específicamente para propiedades residenciales y hoteles. Nos aseguramos de que su hogar o su establecimiento estén protegidos contra cualquier riesgo potencial, incluyendo daños estructurales, robo o responsabilidad civil.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Seguros para Gasolineras -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Seguros para Gasolineras</b></h5>
+                  <a href="#collapse9" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse9">
+                      <p class="card-text p-3">Ofrecemos una cobertura completa para gasolineras, protegiendo su negocio y sus activos contra riesgos específicos asociados con la operación de una estación de servicio. Desde daños a la propiedad hasta responsabilidad civil y contaminación ambiental, nos aseguramos de que su negocio esté completamente protegido en todo momento.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Optimización de Costos y Condiciones -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Optimización de Costos y Condiciones</b></h5>
+                  <a href="#collapse10" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse10">
+                      <p class="card-text p-3">Buscamos constantemente los mejores contratos de seguros para nuestros clientes, asegurándonos de que reciban la mejor cobertura al precio más competitivo. Nos comprometemos a revisar los términos y condiciones de los seguros para maximizar los beneficios y minimizar los costos financieros.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Atención Especializada en Siniestros -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Atención Especializada en Siniestros</b></h5>
+                  <a href="#collapse11" class="" data-toggle="collapse">Ver Más</a>
+                  <div class="collapse" id="collapse11">
+                      <p class="card-text p-3">Contamos con un equipo especializado en atención al cliente para brindarle el apoyo necesario en caso de siniestro. Estamos comprometidos a garantizar que sus reclamaciones se manejen de manera rápida y eficiente, proporcionándole la tranquilidad que merece en momentos difíciles.</p>
+                      <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm text-center">Contáctenos</a>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+{%endblock%}

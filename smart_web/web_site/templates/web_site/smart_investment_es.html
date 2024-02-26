@@ -1,0 +1,79 @@
+{% extends "web_site/layout_es.html" %}
+{% block content%}
+<div class="container-fluid">
+    <div class="row">
+      <!-- Images on the left -->
+      <div class="col-md-6 p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+          <img src="/static/images/hero-bg.jpg" class="h-100 mb-2" alt="...">
+        </div>
+      </div>
+  
+      <!-- Services on the right -->
+      <div class="col-md-6" style="background-color: white;">
+        <div class="m-4">
+          <h1 class="text-center"><b>INVERSIÓN INTELIGENTE</b></h1>
+          <p class="text-center p-3">
+            Nuestro compromiso en Patrimonial Smart & Asociados es brindarle un enfoque único para hacer crecer su patrimonio, basado en estrategias personalizadas y asesoramiento experto. Nos esforzamos por adaptar nuestras recomendaciones para alinearnos con sus objetivos y sueños financieros, reconociendo que la inversión va más allá de simples números; es la oportunidad de elevar su patrimonio con decisiones informadas y cuidadosamente consideradas.
+          </p>
+        </div>
+  
+        <!-- Asesoramiento Especializado -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Asesoramiento Especializado</b></h5>
+            <a href="#collapse1" class="collapsed" data-toggle="collapse">Ver Más</a>
+            <div class="collapse" id="collapse1">
+              <p class="card-text p-3">
+                Contamos con un equipo de asesores dedicados y experimentados que están aquí para guiarlo a través del complejo mundo de las inversiones. Proporcionamos información valiosa y recomendaciones informadas para ayudarlo a tomar decisiones financieras sólidas y efectivas.
+              </p>
+              <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm">Contáctenos</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Oportunidades Estratégicas -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Oportunidades Estratégicas</b></h5>
+            <a href="#collapse2" class="collapsed" data-toggle="collapse">Ver Más</a>
+            <div class="collapse" id="collapse2">
+              <p class="card-text p-3">
+                En Patrimonial Smart & Asociados, no nos limitamos a los números. Exploramos sectores dinámicos y proyectos emocionantes para maximizar sus rendimientos. Identificamos oportunidades de inversión que van más allá de los datos financieros, asegurando que usted tenga acceso a las mejores opciones disponibles en el mercado.
+              </p>
+              <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm">Contáctenos</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Diversificación de Instrumentos Financieros -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Diversificación de Instrumentos Financieros</b></h5>
+            <a href="#collapse3" class="collapsed" data-toggle="collapse">Ver Más</a>
+            <div class="collapse" id="collapse3">
+              <p class="card-text p-3">
+                Reconociendo que cada cliente tiene diferentes niveles de tolerancia al riesgo, ofrecemos una amplia gama de instrumentos financieros que se adaptan a sus necesidades y preferencias. Desde opciones de bajo riesgo, como bonos del gobierno, hasta inversiones de mayor riesgo, como acciones y fondos de capital privado, le brindamos acceso a una variedad de oportunidades de inversión que se alinean con sus objetivos financieros.
+              </p>
+              <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm">Contáctenos</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Estrategias Innovadoras -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Estrategias Innovadoras</b></h5>
+            <a href="#collapse4" class="collapsed" data-toggle="collapse">Ver Más</a>
+            <div class="collapse" id="collapse4">
+              <p class="card-text p-3">
+                Nuestro enfoque va más allá de simplemente invertir su dinero. Desarrollamos estrategias financieras y de negocios personalizadas para aprovechar al máximo cada oportunidad. En Patrimonial Smart & Asociados, nos destacamos por nuestra capacidad para crear soluciones innovadoras que impulsen su éxito a largo plazo, siempre teniendo en cuenta su perfil de riesgo y sus objetivos financieros a largo plazo.
+              </p>
+              <a href="{% url 'contact_es' %}" class="btn btn-primary btn-sm">Contáctenos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
