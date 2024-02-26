@@ -37,16 +37,27 @@ def index(request):
 class SMRTWEBFORMForm(forms.ModelForm):
     frm_fcont = forms.BooleanField(initial=True, required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))
     
+    # Define choices for 'serv' field
+    SERVICE_CHOICES = [
+        ('option1', 'Option 1'),
+        ('option2', 'Option 2'),
+        ('option3', 'Option 3'),
+    ]
+
+    frm_serv = forms.MultipleChoiceField(
+        choices=SERVICE_CHOICES,
+        widget=forms.SelectMultiple(attrs={'class': 'form-control'}),  # Apply Bootstrap class
+    )
+
     class Meta:
         model = SMRTWEBFORM
         exclude = ['frm_date']
         widgets = {
-            'frml_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'frm_fname': forms.TextInput(attrs={'class': 'form-control'}),
-            'frm_phone': forms.TextInput(attrs={'class': 'form-control'}),
-            'frm_email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'frm_serv': forms.TextInput(attrs={'class': 'form-control'}),
-            'frm_messag': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
+            'frml_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Apellido'}),
+            'frm_fname': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nombre'}),
+            'frm_phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Teléfono'}),
+            'frm_email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Correo electrónico'}),
+            'frm_messag': forms.Textarea(attrs={'class': 'form-control', 'rows': 3, 'placeholder': 'Mensaje'}),
         }
 
 def index_es(request):
