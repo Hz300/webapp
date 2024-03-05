@@ -1,32 +1,106 @@
 {% extends "web_site/layout.html" %}
-{% block content%}
-
-<section class="about_section layout_padding" style="background-color: white;">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-5 offset-md-1">
-          <div class="detail-box pr-md-2">
-            <div class="heading_container">
-              <h2 class="">
-                About Us
-              </h2>
-            </div>
-            <p class="detail_p_mt">
-              At Patrimonial SMART & Asociados, we specialize in providing financial and asset management services, as well as real estate, investment, and insurance solutions. Our team of experienced professionals offers personalized advice and guidance to clients, ensuring that their financial goals are met. With a focus on smart and strategic solutions, we help individuals and businesses effectively manage their wealth and investments. Whether it's retirement planning, investment portfolio management, estate planning, or managing and growing one's wealth, Patrimonial SMART & Asociados is dedicated to helping our clients make informed decisions and achieve financial success. We offer a wide range of services to meet the needs of our clients and aim to showcase our expertise and unique selling points on our website. One of our unique selling points is that we are the only company in México that offers these services for both Spanish-speaking and English-speaking customers. Let us help you make informed decisions and achieve financial success today.
-            </p>
-            <a href="contact.html" class="">
-              Get in touch
-            </a>
-          </div>
+{% block content %}
+  <section class="about_section layout_padding" style="background-color: white;">
+    <div class="container">
+      <div class="heading_container heading_center ">
+        <h2 class="p-4">
+          Who We Are?
+        </h2>
+      </div>
+      <div class="row mt-5 shadow mb-5 bg-white rounded p-4">
+        <div class="col-md-6">
+          <h2>Mission</h2>
+          <p>We contribute to improving the lives of our clients by facilitating access to innovative and personalized financial services that drive the construction of a solid and prosperous heritage.</p>
         </div>
-        <div class="col-md-6 px-0">
-          <div class="img-box ">
-            <img src="static/images/about-img.jpg" class="box_img" alt="about img">
-          </div>
+        <div class="col-md-6">
+          <h2>Vision</h2>
+          <p>To be the leading financial firm in Mexico and a reference in America, recognized for offering innovative solutions and an unwavering commitment to the success of our clients, providing them with a close and personalized experience that makes them feel at home.</p>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- about section ends -->
+    <div class="heading_container heading_center ">
+      <h2 class="p-4">
+        Our Values
+      </h2>
+    </div>
+
+    <section class="values-carousel">
+      <div class="container w-lg-50">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="valuesCarousel" class="carousel slide" data-ride="carousel">
+              <ol class="carousel-indicators">
+                <li data-target="#valuesCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#valuesCarousel" data-slide-to="1"></li>
+                <li data-target="#valuesCarousel" data-slide-to="2"></li>
+                <li data-target="#valuesCarousel" data-slide-to="3"></li>
+                <li data-target="#valuesCarousel" data-slide-to="4"></li>
+                <li data-target="#valuesCarousel" data-slide-to="5"></li>
+                <li data-target="#valuesCarousel" data-slide-to="6"></li>
+              </ol>
+              <div class="carousel-inner">
+                <div class="carousel-item active ">
+                  <div class="card mb-4 shadow mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">Social Responsibility</h5>
+                      <p class="card-text">We are committed to the well-being of the community and the environment, and we promote sustainable practices in all our operations.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card mb-4 shadow mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">Integrity</h5>
+                      <p class="card-text">We act with honesty, ethics, and responsibility in all our interactions, maintaining an unwavering commitment to truth and justice.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card mb-4 shadow mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">Innovation</h5>
+                      <p class="card-text">We constantly seek new and better ways to serve our clients, using cutting-edge technology and creative solutions.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card mb-4 shadow mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">Loyalty</h5>
+                      <p class="card-text">We cultivate relationships of trust and respect with our clients, employees, and partners, based on transparency, open communication, and mutual support.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card mb-4 shadow mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">Collaboration</h5>
+                      <p class="card-text">We value teamwork and collaboration, recognizing that together we achieve more than individually. We foster an inclusive and participatory environment where the diversity of ideas is celebrated, and the exchange of knowledge and experiences is encouraged.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="card mb-4 shadow mb-5 bg-white rounded">
+                    <div class="card-body">
+                      <h5 class="card-title">Service</h5>
+                      <p class="card-text">We are passionate about providing exceptional customer service, characterized by personalized attention, proactivity, and transparency.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#valuesCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only btn-primary">Previous</span>
+              </a>
+              <a class="carousel-control-next" style="color: black;" href="#valuesCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only btn-primary">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
 {% endblock %}

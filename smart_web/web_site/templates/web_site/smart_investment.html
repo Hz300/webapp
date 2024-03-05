@@ -1,0 +1,79 @@
+{% extends "web_site/layout.html" %}
+{% block content%}
+<div class="container-fluid">
+    <div class="row">
+      <!-- Images on the left -->
+      <div class="col-md-6 p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+        <div class="d-flex flex-column justify-content-center align-items-center h-100">
+          <img src="/static/images/hero-bg.jpg" class="h-100 mb-2" alt="...">
+        </div>
+      </div>
+  
+      <!-- Services on the right -->
+      <div class="col-md-6" style="background-color: white;">
+        <div class="m-4">
+          <h1 class="text-center"><b>INTELLIGENT INVESTMENT</b></h1>
+          <p class="text-center p-3">
+            Our commitment at Patrimonial Smart & Associates is to provide you with a unique approach to growing your wealth, based on personalized strategies and expert advice. We strive to tailor our recommendations to align with your financial goals and dreams, recognizing that investment goes beyond simple numbers; it's the opportunity to elevate your wealth with informed and carefully considered decisions.
+          </p>
+        </div>
+  
+        <!-- Specialized Advice -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Specialized Advice</b></h5>
+            <a href="#collapse1" class="collapsed" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse1">
+              <p class="card-text p-3">
+                We have a team of dedicated and experienced advisors who are here to guide you through the complex world of investments. We provide valuable insights and informed recommendations to help you make sound and effective financial decisions.
+              </p>
+              <a href="{% url 'contact' %}" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Strategic Opportunities -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Strategic Opportunities</b></h5>
+            <a href="#collapse2" class="collapsed" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse2">
+              <p class="card-text p-3">
+                At Patrimonial Smart & Associates, we don't limit ourselves to numbers. We explore dynamic sectors and exciting projects to maximize your returns. We identify investment opportunities beyond financial data, ensuring you have access to the best available options in the market.
+              </p>
+              <a href="{% url 'contact' %}" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Diversification of Financial Instruments -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Diversification of Financial Instruments</b></h5>
+            <a href="#collapse3" class="collapsed" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse3">
+              <p class="card-text p-3">
+                Recognizing that each client has different risk tolerances, we offer a wide range of financial instruments tailored to your needs and preferences. From low-risk options like government bonds to higher-risk investments like stocks and private equity funds, we provide access to a variety of investment opportunities that align with your financial goals.
+              </p>
+              <a href="{% url 'contact' %}" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Innovative Strategies -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Innovative Strategies</b></h5>
+            <a href="#collapse4" class="collapsed" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse4">
+              <p class="card-text p-3">
+                Our approach goes beyond simply investing your money. We develop personalized financial and business strategies to make the most of every opportunity. At Patrimonial Smart & Associates, we excel in creating innovative solutions that drive your long-term success, always considering your risk profile and long-term financial goals.
+              </p>
+              <a href="{% url 'contact' %}" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}

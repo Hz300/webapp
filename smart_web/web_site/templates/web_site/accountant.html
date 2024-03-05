@@ -1,0 +1,69 @@
+{% extends "web_site/layout.html" %}
+{% block content %}
+
+<div class="container-fluid" style="">
+    <div class="row">
+        <!-- Images on the left -->
+        <div class="col-md-6 p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div class="d-flex flex-column justify-content-center align-items-center h-100">
+            <img src="/static/images/accounting-vertical-sm.jpg" class="w-100" alt="...">
+          </div>
+        </div>
+
+
+      <!-- Services on the right -->
+      <div class="col-md-6" style="background-color: white;">
+        <h1 class="m-4 text-center"><b>CONTABILITY SERVICES</b></h1>
+        <p class="text-center p-3">At Patrimonial Smart & Associates, we offer top-notch accounting services, focused on providing strategic and personalized financial solutions for your company.</p>
+
+        <!-- Efficient Financial Management -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Efficient Financial Management</b></h5>
+            <a href="#collapse1" class="" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse1">
+              <p class="card-text p-3">We optimize your finances management, providing accurate and timely information for informed decision-making that drives growth and profitability.</p>
+              <a href="contact.html" class="btn btn-primary btn-sm text-center">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tax Compliance -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Tax Compliance</b></h5>
+            <a href="#collapse2" class="" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse2">
+              <p class="card-text">We ensure that your company complies with all tax obligations, keeping your tax affairs in order and avoiding unpleasant surprises.</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tax Strategy -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Tax Strategy</b></h5>
+            <a href="#collapse3" class="" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse3">
+              <p class="card-text">We develop efficient tax strategies to minimize your tax burden and maximize your benefits, ensuring regulatory compliance and maximizing available tax opportunities.</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customized Accounting Solutions -->
+        <div class="card shadow mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><b>Customized Accounting Solutions</b></h5>
+            <a href="#collapse4" class="" data-toggle="collapse">See More</a>
+            <div class="collapse" id="collapse4">
+              <p class="card-text">We create accounting solutions tailored to the specific needs of your business, providing expert advice and customized solutions that drive your long-term financial success.</p>
+              <a href="contact.html" class="btn btn-primary btn-sm">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

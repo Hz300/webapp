@@ -1,72 +1,67 @@
 {% extends "web_site/layout.html" %}
 {% block content%}
+
 <div style="background-color: white;">
-<section class="team_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Our Portfolio
-        </h2>
-        <p>
-          Building and managing a diverse property portfolio
-           requires strategic foresight and proactive management. 
-           With Patrimonial Smart, we ensure your investments thrive, 
-           offering tailored solutions to optimize your real estate assets and secure long-term growth.
-        </p>
-        <div class="search_bar">
-          <input type="text" placeholder="Search...">
-          <select name="location_filter" id="location_filter">
-            <option value="">All Locations</option>
-            <option value="New York">New York</option>
-            <option value="Los Angeles">Los Angeles</option>
-            <option value="Chicago">Chicago</option>
-            <option value="San Francisco">San Francisco</option>
-            <!-- Add more location options as needed -->
-          </select>
-          <select name="price_range_filter" id="price_range_filter">
-            <option value="">Price Range</option>
-            <option value="0-100000">$0 - $100,000</option>
-            <option value="100000-200000">$100,000 - $200,000</option>
-            <option value="200000-300000">$200,000 - $300,000</option>
-            <!-- Add more price range options as needed -->
-          </select>
-          <select name="property_type_filter" id="property_type_filter">
-            <option value="">Property Type</option>
-            <option value="Apartment">Apartment</option>
-            <option value="House">House</option>
-            <option value="Condo">Condo</option>
-            <!-- Add more property type options as needed -->
-          </select>
-          <button type="button">Filter</button>
-        </div>
-      </div>
-      
-      <div class="row">
-        {%for prop in props%}
-        <div class="col-md-4 col-sm-6 mx-auto">
-            <div class="box">
-              <div class="img-box">
-                <img src="" alt="">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  {{prop.imb_Name}}
-        
-                </h5>
-                <h6 class="">
-                  {{prop.imb_State}}
-                </h6>
-                <h6 class="">
-                  {{prop.imb_Description}}
-                </h6>
-                <h6 class="">
-                  {{prop.imb_Price}}  {{prop.imb_Currency}}
-                </h6>
-              </div>
-            </div>
+    <section class="team_section layout_padding">
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2>
+              Nuestro Portafolio
+            </h2>
+            <p>
+              Construir y gestionar un portafolio de propiedades diversificado
+               requiere visión estratégica y gestión proactiva. Con Patrimonial Smart, 
+               nos aseguramos de que tus inversiones prosperen, 
+               ofreciendo soluciones personalizadas para optimizar tus activos inmobiliarios y asegurar un crecimiento a largo plazo.
+            </p>
+            <div class="search_bar">
+              <form action="{% url 'portfolio' %}" method="get">
+                  <input type="text" name="search" placeholder="Buscar...">
+                  <select name="location_filter" id="location_filter">
+                      <option value="">Todas las Ubicaciones</option>
+                      {% for city in cities %}
+                          <option value="{{ city }}">{{ city }}</option>
+                      {% endfor %}
+                  </select>
+                  <select name="property_type_filter" id="property_type_filter">
+                      <option value="">Tipo de Propiedad</option>
+                      {% for property_type in property_types %}
+                          <option value="{{ property_type }}">{{ property_type }}</option>
+                      {% endfor %}
+                  </select>
+                  <!-- Add more dropdowns similarly for other fields -->
+                  <button type="submit">Filtrar</button>
+              </form>
           </div>
-        {%endfor%}
+          </div>
+          
+          <div class="row">
+            {% for prop in props %}
+            <div class="col-md-4 col-sm-6 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{ prop.imb_Image.url}}" alt="">
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      {{ prop.imb_Name }}
+                    </h5>
+                    <h6 class="">
+                      {{ prop.imb_State }}
+                    </h6>
+                    <h6 class="">
+                      {{ prop.imb_Description }}
+                    </h6>
+                    <h6 class="">
+                      {{ prop.imb_Price }}  {{ prop.imb_Currency }}
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+        </div>
+      </section>
     </div>
-  </section>
-</div>
+    
+
 {%endblock%}

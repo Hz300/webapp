@@ -2,42 +2,41 @@
 {% block content%}
     <!-- slider section -->
     <!-- sección del carrusel -->
-<div class="container py-2 py-md-4 px-2 px-md-5 hero-header mt-4 mt-md-5 rounded-lg" style="background-color: rgba(0, 0, 0, 0.3); max-width: 100%;">
-  <div class="container my-0 py-0">
-      <div class="row align-items-center g-0 g-md-5">
-          <div class="col-lg-6 text-center text-lg-start p-3 p-md-4">
-              <h1 class="display-4 text-white animated slideInLeft">Consultoría Financiera <br>Personalizada</h1>
-              <p class="text-white animated slideInLeft mb-3 mb-md-4 pb-2">Patrimonial Smart es una firma de servicios financieros especializada en gestión de activos, bienes raíces, inversiones y soluciones de seguros.</p>
-              <a href="#" class="btn btn-primary py-2 py-sm-3 px-3 px-sm-4 me-3 animated slideInLeft" style="background-color: 0877bf;">Agendar una cita</a>
-          </div>
-          <div class="col-lg-6 text-center text-lg-end">
-              <!--carousel starts-->
-              <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active" data-interval="2000">
-                      <img src="/static/images/mannorcar.jpeg" class="d-block w-100" alt="...">
+    <div class="container py-2 py-md-4 px-2 px-md-5 hero-header mt-4 mt-md-5 rounded-lg" style="background-color: rgba(0, 0, 0, 0.3); max-width: 100%;">
+      <div class="container my-0 py-0">
+          <div class="row align-items-center g-0 g-md-5">
+              <div class="col-lg-6 text-center text-lg-start p-3 p-md-4">
+                  <h1 class="display-4 text-white animated slideInLeft">Personalized Financial Consulting</h1>
+                  <p class="text-white animated slideInLeft mb-3 mb-md-4 pb-2">Patrimonial Smart is a financial services firm specializing in asset management, real estate, investments and insurance solutions.</p>
+                  <a href="{% url 'contact'%}" class="btn btn-primary py-2 py-sm-3 px-3 px-sm-4 me-3 animated slideInLeft" style="background-color: 0877bf;">Schedule an appointment</a>
+              </div>
+              <div class="col-lg-6 text-center text-lg-end">
+                  <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active" data-interval="2000">
+                          <img src="/static/images/mannorcar.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="2000">
+                          <img src="/static/images/accountant.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item" data-interval="2000">
+                          <img src="/static/images/insurance.jpeg" class="d-block w-100" alt="...">
+                        </div>
+                      </div>
+                      <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
                     </div>
-                    <div class="carousel-item" data-interval="2000">
-                      <img src="/static/images/accountant.jpeg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item" data-interval="2000">
-                      <img src="/static/images/insurance.jpeg" class="d-block w-100" alt="...">
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </div>
+              </div>
           </div>
       </div>
-  </div>
-</div>
-<!-- fin de la sección del carrusel -->
+    </div>
+    
 </div>
 
 
@@ -255,11 +254,42 @@
             </div>
             <form method="post">
               {% csrf_token %}
-              {{ form.as_p }}
-              <div class="btn_box">
-                <button type="submit">SEND</button>
+              <div class="form-group">
+                <label for="{{ form.frml_name.id_for_label }}">Last Name:</label>
+                {{ form.frml_name }}
               </div>
+              <div class="form-group">
+                <label for="{{ form.frm_fname.id_for_label }}">First Name:</label>
+                {{ form.frm_fname }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.frm_phone.id_for_label }}">Phone Number:</label>
+                {{ form.frm_phone }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.frm_email.id_for_label }}">Email Address:</label>
+                {{ form.frm_email }}
+              </div>
+              <div class="form-group">
+                <label for="{{ form.frm_serv.id_for_label }}">Service:</label>
+                <select class="custom-select" id="{{ form.frm_serv.id_for_label }}" name="{{ form.frm_serv.html_name }}">
+                  <option selected>Select Service...</option>
+                  {% for value, label in form.frm_serv.field.choices %}
+                    <option value="{{ value }}">{{ label }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="{{ form.frm_messag.id_for_label }}">Message:</label>
+                {{ form.frm_messag }}
+              </div>
+              <div class="form-group form-check">
+                {{ form.frm_fcont }}
+                <label class="form-check-label" for="{{ form.frm_fcont.id_for_label }}">Inform me about opportunities of my interest</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
+            
           </div>
         </div>
       </div>

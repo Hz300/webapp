@@ -1,0 +1,156 @@
+{% extends "web_site/layout.html" %}
+{% block content%}
+<div class="container-fluid" style="">
+  <div class="row">
+      <!-- Images on the left -->
+      <div class="col-md-6 p-0" style="background-color: rgba(0, 0, 0, 0.4);">
+          <div class="d-flex flex-column justify-content-center align-items-center h-100">
+              <img src="/static/images/insurance.jpeg" class=" w-100 m-2" alt="...">
+              <img src="/static/images/insurance3.avif" class="w-100 m-2" alt="...">
+              <img src="/static/images/insurance2.png" class="w-100 m-2" alt="...">
+              <img src="/static/images/h1.jpeg" class="w-100 m-2" alt="...">
+          </div>
+      </div>
+
+
+      <!-- Services on the right -->
+      <div class="col-md-6" style="background-color: white;">
+          <h1 class="m-4 text-center"><b>FINANCIAL ADVISORY AND INSURANCE</b></h1>
+          <p class="text-center p-3">At Patrimonial Smart & Associates, we take pride in offering comprehensive financial advisory and insurance services tailored to your individual needs and the lifestyle you wish to protect. Our dedication focuses on providing solid and personalized protection in a variety of key areas:</p>
+
+          <!-- Retirement Insurance -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Retirement Insurance</b></h5>
+                  <a href="#collapse1" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse1">
+                      <p class="card-text p-3">Our retirement insurance experts will help you plan and secure a solid and secure financial future. We work with you to design investment strategies that provide you with a stable and comfortable income flow during your golden years.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Life Insurance with Maximum Protection -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Life Insurance with Maximum Protection</b></h5>
+                  <a href="#collapse2" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse2">
+                      <p class="card-text p-3">We offer a wide range of life insurance policies designed to provide you with maximum market protection. From permanent life policies to term life insurance, we ensure that you and your loved ones are fully protected in the event of any eventuality.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Education for Your Children -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Education for Your Children</b></h5>
+                  <a href="#collapse3" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse3">
+                      <p class="card-text p-3">We guarantee a solid financial backing for the education of your little geniuses. Our educational insurances are designed to give you peace of mind that your children will have access to the best learning opportunities, no matter what happens along the way.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Personalized Medical Expenses -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Personalized Medical Expenses</b></h5>
+                  <a href="#collapse4" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse4">
+                      <p class="card-text p-3">We design medical insurances that fit your individual needs, turning healthcare into a tailored experience. Whether you prefer the comfort of a private hospital or the personalized attention of a trusted physician, we ensure that your medical coverage reflects your unique lifestyle.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Comprehensive Business Protection -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Comprehensive Business Protection</b></h5>
+                  <a href="#collapse5" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse5">
+                      <p class="card-text p-3">From small businesses to multinational corporations, we offer a full range of commercial insurances to protect your assets and mitigate risks. We specialize in business insurances, car fleets, and trucks, ensuring that your company is backed by coverage tailored to your specific needs.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Private Use Car and Motorcycle Insurances -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Private Use Car and Motorcycle Insurances</b></h5>
+                  <a href="#collapse6" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse6">
+                      <p class="card-text p-3">We understand that each private vehicle is unique, which is why we offer insurances specifically designed to suit your individual needs. Whether it's for your family car that takes you to the office every day or your recreational motorcycle that accompanies you on weekend adventures, we make sure that each journey is supported by coverage that perfectly fits your needs and lifestyle.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Car and Truck Fleets -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Car and Truck Fleets</b></h5>
+                  <a href="#collapse7" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse7">
+                      <p class="card-text p-3">For us, protecting your car and truck fleets is an absolute priority. Our insurances are designed to provide comprehensive coverage tailored to the specific needs of your fleet. On every trip, we ensure that you are backed by a policy that perfectly suits the characteristics of your commercial vehicles, protecting your assets and mitigating risks along the way.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Home and Hotel Insurances -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Home and Hotel Insurances</b></h5>
+                  <a href="#collapse8" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse8">
+                      <p class="card-text p-3">We protect your investment in real estate with insurances specifically designed for residential properties and hotels. We ensure that your home or establishment is protected against any potential risks, including structural damage, theft, or civil liability.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Gas Station Insurances -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Gas Station Insurances</b></h5>
+                  <a href="#collapse9" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse9">
+                      <p class="card-text p-3">We offer comprehensive coverage for gas stations, protecting your business and assets against specific risks associated with operating a service station. From property damage to civil liability and environmental pollution, we ensure that your business is fully protected at all times.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Cost and Conditions Optimization -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Cost and Conditions Optimization</b></h5>
+                  <a href="#collapse10" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse10">
+                      <p class="card-text p-3">We constantly seek the best insurance contracts for our clients, ensuring that they receive the best coverage at the most competitive price. We are committed to reviewing insurance terms and conditions to maximize benefits and minimize financial costs.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Specialized Claims Handling -->
+          <div class="card shadow mb-5 bg-white rounded">
+              <div class="card-body">
+                  <h5 class="card-title"><b>Specialized Claims Handling</b></h5>
+                  <a href="#collapse11" class="" data-toggle="collapse">See More</a>
+                  <div class="collapse" id="collapse11">
+                      <p class="card-text p-3">We have a specialized customer service team to provide you with the necessary support in the event of a claim. We are committed to ensuring that your claims are handled quickly and efficiently, providing you with the peace of mind you deserve in difficult times.</p>
+                      <a href="{% url 'contact' %}" class="btn btn-primary btn-sm text-center">Contact Us</a>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+</div>
+{%endblock%}
