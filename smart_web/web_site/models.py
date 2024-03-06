@@ -21,6 +21,7 @@ class SMRTPROPERTIES(models.Model):
     imb_Agent = models.CharField(max_length=80, null=True, db_column='IMBAGENT')
     imb_Prom_Disc = models.BooleanField(null=True, db_column='IMBPROMDISC')
     imb_Description = models.CharField(max_length=200, null=True, db_column='IMBDESCRIPTION')
+    imb_Description_Es = models.CharField(max_length=200, null=True, db_column='IMBDESCRIPTIONES')
     imb_Active = models.BooleanField(null=True, db_column='IMBACTIVE')
     imb_Image = models.ImageField(upload_to='static/images/property_images/', null=True, blank=True, db_column="IMBIMAGE")
     

@@ -11,17 +11,17 @@ from .models import SMRTPROPERTIES, SMRTWEBFORM
 
 
 def index(request):
-   form = SMRTWEBFORMForm(request.POST)
-   if request.method == 'POST':
-      
-      if form.is_valid():
+    if request.method == 'POST':
+        form = SMRTWEBFORMForm(request.POST)
+        if form.is_valid():
             form.instance.frm_date = datetime.now()
             form.save()
-            return redirect('index')  # Redirect to a success page
-      else:
-         form = SMRTWEBFORMForm()
+            # Redirect to a success page or another view after form submission
+            return redirect('index')  # Redirect to the same view ('index') after form submission
+    else:
+        form = SMRTWEBFORMForm()
     
-   return render(request, "web_site/index.html", {'form': form})
+    return render(request, "web_site/index.html", {'form': form})
 
 class SMRTWEBFORMForm(forms.ModelForm):
     frm_fcont = forms.BooleanField(initial=True, required=False, widget=forms.CheckboxInput(attrs={'class': 'form-check-input'}))

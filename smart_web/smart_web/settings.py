@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-#+&$v680f1=!8%8-3em2=ctw@pq_7!1v2y64s_ef!lzuddospp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hazael.pythonanywhere.com', 'yourcustomdomain.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['hazael.pythonanywhere.com', 'patrimonialsmart.com','104.131.74.242', 'localhost', '127.0.0.1']
 
 
 
@@ -76,9 +76,13 @@ WSGI_APPLICATION = "smart_web.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'PATSMART',
+        'USER': 'SMARTWEB',
+        'PASSWORD': 'rG4#j23K%F$',
+        'HOST': 'localhost',  # Set to 'localhost' if your MySQL server is on the same machine
+        'PORT': '3306',  # Use the appropriate port for your MySQL server
     }
 }
 
