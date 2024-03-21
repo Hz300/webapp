@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils import timezone
+import os
 
 # Create your models here.
 
@@ -23,11 +25,33 @@ class SMRTPROPERTIES(models.Model):
     imb_Description = models.CharField(max_length=200, null=True, db_column='IMBDESCRIPTION')
     imb_Description_Es = models.CharField(max_length=200, null=True, db_column='IMBDESCRIPTIONES')
     imb_Active = models.BooleanField(null=True, db_column='IMBACTIVE')
-    imb_Image = models.ImageField(upload_to='static/images/property_images/', null=True, blank=True, db_column="IMBIMAGE")
+    imb_Creation_Time = models.DateTimeField(default=timezone.now)
     
+
+    def __str__(self):
+        return f"{self.imb_ID} {self.imb_Name}"
+
+    def save(self, *args, **kwargs):
+        if self._state.adding:
+            self.imb_Creation_Time = timezone.now()
+        super().save(*args, **kwargs)
+
     class Meta:
         managed = True
         db_table = 'SMRTPROPERTIES'
+
+def get_image_path(instance, filename):
+        # Generate the folder path based on the property ID
+        property_id = instance.property.imb_ID
+        return f'property_images/{property_id}/{filename}'
+
+class PropertyImage(models.Model):
+    property = models.ForeignKey(SMRTPROPERTIES, on_delete=models.CASCADE, )  # Forward reference to SMRTPROPERTIES
+    image = models.ImageField(upload_to=get_image_path, null=True, blank=True, db_column='IMAGES')
+
+    class Meta:
+        managed = True
+        db_table = 'PROPERTYIMAGES'  # 
 
 
 class SMRTWEBFORM(models.Model):
@@ -44,3 +68,26 @@ class SMRTWEBFORM(models.Model):
     class Meta:
         managed = True
         db_table = 'SMRTWEBFORM'
+        
+
+def get_asociate_path(instance, filename):
+    """
+    Generates a unique path for the uploaded image based on associate name.
+    """
+    associate_name = instance.nombre.lower().replace(" ", "_")  # Sanitize name
+    return os.path.join('asociates', associate_name, filename)
+
+class Asociados(models.Model):
+    nombre = models.CharField(max_length=255)
+    contacto = models.CharField(max_length=255)
+    area_expertis = models.CharField(max_length=255)
+    puesto = models.CharField(max_length=255)
+    descripcion = models.TextField()
+    imagen = models.ImageField(upload_to=get_asociate_path, blank=True)  # Allow blank images
+    activo = models.BooleanField(null=True)
+
+    def __str__(self):
+        return f"{self.nombre} ({self.area_expertis})"
+
+    class Meta:
+        managed = True

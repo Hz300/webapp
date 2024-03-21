@@ -4,7 +4,7 @@
 <head>
   <!-- Basic -->
 
-<script src="//static/js/jquery-3.4.1.min.js"></script>
+<script src="/static/js/jquery-3.4.1.min.js"></script>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -33,6 +33,7 @@
   <link href="/static/css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="/static/css/responsive.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -46,9 +47,10 @@
       
       <div class="header_bottom">
         <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <h1 class="navbar-brand">Patrimonial SMART & Asociados</h1>
-
+          <nav class="navbar navbar-expand-lg custom_nav-container " style="background-color:">
+          <div class="container mx-auto mt-1 justify-content-center" style="background-color: ;">
+            <img class="" style="max-height: 4em;" src="/static/images/logo_b.png" alt="">
+          </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
             </button>
@@ -74,7 +76,7 @@
                   <a class="nav-link" href="{% url 'faqs'%}">FAQ's</a>
                 </li>
                 <li class="nav-item">
-                  <select name="language" style="background: none; border: none;" id="languageSelect" class="nav-link">
+                  <select name="language" style="background: none; border: none;" id="languageSelect" class="nav-link col-sm-auto">
                     <option value="en" style="background: none; border: none;" class="nav-link">English</option>
                     <option value="es" style="background: none; border: none;" class="nav-link">Spanish</option>
                   </select>
@@ -100,7 +102,7 @@
           </div>
           <div class="col-md-5 ">
             <div class="info_contact">
-              <a href="">
+              <a href="https://maps.app.goo.gl/7sWHjRxqptZ3gSAW8">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
@@ -116,7 +118,7 @@
           </div>
           <div class="col-md-4 ">
             <div class="social_box">
-              <a href="">
+              <a href="https://www.facebook.com/profile.php?id=61554677347110">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
               <a href="">
@@ -125,7 +127,7 @@
               <a href="">
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
               </a>
-              <a href="">
+              <a href="https://www.instagram.com/patrimonial_smart/">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
             </div>
@@ -166,27 +168,27 @@
               </h5>
               <ul class="info_menu">
                 <li>
-                  <a href="index.html">
+                  <a href="{% url 'index'%}">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="about.html">
+                  <a href="{% url 'about' %}">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="service.html">
+                  <a href="{% url 'services' %}">
                     Services
                   </a>
                 </li>
                 <li>
-                  <a href="team.html">
+                  <a href="{% url 'about' %}">
                     Team
                   </a>
                 </li>
                 <li class="mb-0">
-                  <a href="contact.html">
+                  <a href="{% url 'contact' %}">
                     Contact Us
                   </a>
                 </li>
@@ -210,7 +212,8 @@
   </footer>
   <!-- footer section -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <!-- jQery -->
   <script src="/static/js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
@@ -223,9 +226,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
   <!-- custom js -->
   <script src="/static/js/custom.js"></script>
-  <!-- Google Map -->
+  <!-- Google Map 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+   End Google Map -->
 
   <script>
     // Get the select element

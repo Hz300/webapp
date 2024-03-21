@@ -1,12 +1,13 @@
 {% extends "web_site/layout_es.html" %}
 {% block content%}
-  <section class="about_section layout_padding" style="background-color: white;">
+<div class="heading_container heading_center ">
+  <h1 class="p-4 pb-0 text-white">
+    ¿Quienes Somos?
+  </h1>
+</div>
+  <section class="about_section " style="background-color:  ;">
     <div class="container">
-      <div class="heading_container heading_center ">
-        <h2 class="p-4">
-          ¿Quienes Somos?
-        </h2>
-      </div>
+      
       <div class="row mt-5 shadow  mb-5 bg-white rounded p-4">
         <div class="col-md-6">
           <h2>Misión</h2>
@@ -22,98 +23,121 @@
         </div>
       </div>
     </div>
-
-    <div class="heading_container heading_center ">
-        <h2 class="p-4">
-          Nuestros Valores
-        </h2>
-      </div>
-
-      <section class="values-carousel">
-        <div class="container w-lg-50">
-          <div class="row">
-            <div class="col-md-12">
-              <div id="valuesCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                  <li data-target="#valuesCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#valuesCarousel" data-slide-to="1"></li>
-                  <li data-target="#valuesCarousel" data-slide-to="2"></li>
-                  <li data-target="#valuesCarousel" data-slide-to="3"></li>
-                  <li data-target="#valuesCarousel" data-slide-to="4"></li>
-                  <li data-target="#valuesCarousel" data-slide-to="5"></li>
-                  <li data-target="#valuesCarousel" data-slide-to="6"></li>
-                </ol>
-                <div class="carousel-inner">
-                  <div class="carousel-item active ">
-                    <div class="card mb-4 shadow  mb-5 bg-white rounded">
-                      <div class="card-body">
-                        <h5 class="card-title">Responsabilidad Social</h5>
-                        <p class="card-text">Estamos comprometidos con el bienestar de la comunidad y el medio ambiente, y
-                          promovemos prácticas sostenibles en todas nuestras operaciones.</p>
-                      </div>
-                    </div>
+        <section class="team_section layout_padding bg-white">
+          
+          <div class="container">
+            <div class="heading_container heading_center">
+              <h2>
+                Nuestro Equipo
+              </h2>
+              <p>
+                Presentamos el motor detrás de Patrimonial Smart: nuestro excepcional equipo. Con experiencia en bienes raíces, inversiones, seguros y asesoramiento financiero, estamos dedicados a tu éxito. Conoce a los rostros de excelencia que impulsan hacia adelante nuestros servicios.
+              </p>
+            </div>
+            <div class="row">
+              {% for socio in socios %}
+              <div class="col-md-4 col-sm-6 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{socio.imagen.url}}" alt="">
                   </div>
-                  <div class="carousel-item">
-                    <div class="card mb-4 shadow  mb-5 bg-white rounded">
-                      <div class="card-body">
-                        <h5 class="card-title">Integridad</h5>
-                        <p class="card-text">Actuamos con honestidad, ética y responsabilidad en todas nuestras interacciones, manteniendo un
-                          compromiso inquebrantable con la verdad y la justicia.</p>
-                      </div>
-                    </div>
+                  <div class="detail-box">
+                    <h5>
+                      {{socio.nombre}}
+                    </h5>
+                    <h6 class="">
+                      {{socio.puesto}}
+                    </h6>
+                    <h6>
+                      {{ socio.area_expertis}}
+                    </h6>
                   </div>
-                  <div class="carousel-item">
-                    <div class="card mb-4 shadow  mb-5 bg-white rounded">
-                      <div class="card-body">
-                        <h5 class="card-title">Innovación</h5>
-                        <p class="card-text">
-                          Buscamos constantemente nuevas y mejores formas de servir a nuestros clientes, utilizando
-tecnología de vanguardia y soluciones creativas.
-                        </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="card mb-4 shadow  mb-5 bg-white rounded">
-                        <div class="card-body">
-                          <h5 class="card-title">Lealtad</h5>
-                          <p class="card-text">Cultivamos relaciones de confianza y respeto con nuestros clientes, empleados y socios, basadas en la
-                            transparencia, la comunicación abierta y el apoyo mutuo.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="card mb-4 shadow  mb-5 bg-white rounded">
-                        <div class="card-body">
-                          <h5 class="card-title">Colaboración</h5>
-                          <p class="card-text">Valoramos el trabajo en equipo y la colaboración, reconociendo que juntos logramos más que individualmente. Fomentamos un ambiente inclusivo y participativo donde se celebra la diversidad de ideas y se fomenta el intercambio de conocimientos y experiencias.</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="card mb-4 shadow  mb-5 bg-white rounded">
-                        <div class="card-body">
-                          <h5 class="card-title">Servicio</h5>
-                          <p class="card-text">: Nos apasiona brindar un servicio al cliente excepcional, caracterizado por la atención personalizada, la
-                            proactividad y la transparencia.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <a class="carousel-control-prev" href="#valuesCarousel" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only btn-primary">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" style="color: black;" href="#valuesCarousel" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only btn-primary">Next</span>
-                  </a>
                 </div>
               </div>
+              {%endfor%}
+            
             </div>
           </div>
         </section>
+        <div class="heading_container heading_center bg-white ">
+          <h3 class="p-4 pb-0">
+            Nuestros Valores
+          </h3>
+        </div>
+        <section class="values-carousel">
+          <div class="container-fluid p-0">
+            <div class="row">
+              <div class="col">
+                <div id="valuesCarousel" class="carousel slide text-center" data-ride="carousel">
+                  <div class="carousel-inner">
+                        <div class="carousel-item active w-100">
+                          <div class="card container-fluid p-1 bg-warning w-100" >
+                            <div class="card-body">
+                              <h5 class="card-title"></h5>
+                              <p class="card-text"><b>Responsabilidad Social </b>Estamos comprometidos con el bienestar de la comunidad y el medio ambiente, y
+                                promovemos prácticas sostenibles.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="card container-fluid p-1 bg-warning w-100">
+                            <div class="card-body">
+                              <h5 class="card-title"></h5>
+                              <p class="card-text"><b>Integridad </b>Actuamos con honestidad, ética y responsabilidad en todas nuestras interacciones, manteniendo un
+                                compromiso inquebrantable con la verdad y la justicia.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="carousel-item">
+                          <div class="card container-fluid p-1 bg-warning w-100" >
+                            <div class="card-body">
+                              <h5 class="card-title"></h5>
+                              <p class="card-text">
+                                <b>Innovación </b>Buscamos constantemente nuevas y mejores formas de servir a nuestros clientes, utilizando tecnología de vanguardia y soluciones creativas.
+                              </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <div class="card container-fluid p-1 bg-warning w-100 ">
+                              <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"><b>Lealtad </b>Cultivamos relaciones de confianza y respeto con nuestros clientes, empleados y socios, basadas en la
+                                  transparencia, la comunicación abierta y el apoyo mutuo.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <div class="card container-fluid p-1 bg-warning w-100 ">
+                              <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"><b>Colaboración </b>Valoramos el trabajo en equipo y la colaboración, creyendo en su poder para lograr más juntos. Fomentamos un ambiente inclusivo.</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="carousel-item">
+                            <div class="card container-fluid p-1 bg-warning w-100 ">
+                              <div class="card-body">
+                                <h5 class="card-title"></h5>
+                                <p class="card-text"><b>Servicio </b>Nos apasiona brindar un servicio al cliente excepcional, caracterizado por la atención personalizada, la
+                                  proactividad y la transparencia.</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#valuesCarousel" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon invisible" aria-hidden="true"></span>
+                          <span class="sr-only btn-primary">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" style="color: black;" href="#valuesCarousel" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon invisible" aria-hidden="true"></span>
+                          <span class="sr-only btn-primary">Next</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
     </section>
-  
   {% endblock %}
   

@@ -1,106 +1,86 @@
-{% extends "web_site/layout.html" %}
-{% block content %}
-  <section class="about_section layout_padding" style="background-color: white;">
+{% extends "web_site/layout.html" %}  <!-- Extending the Spanish layout file -->
+
+{% block content%}  <!-- Beginning of the content block -->
+<div class="heading_container heading_center ">
+  <h1 class="p-4 pb-0 text-white">
+    Who Are We?  <!-- Translation: ¿Quiénes Somos? -->
+  </h1>
+</div>
+  <section class="about_section " style="background-color:  ;">
     <div class="container">
-      <div class="heading_container heading_center ">
-        <h2 class="p-4">
-          Who We Are?
-        </h2>
-      </div>
-      <div class="row mt-5 shadow mb-5 bg-white rounded p-4">
+      
+      <div class="row mt-5 shadow  mb-5 bg-white rounded p-4">
         <div class="col-md-6">
-          <h2>Mission</h2>
-          <p>We contribute to improving the lives of our clients by facilitating access to innovative and personalized financial services that drive the construction of a solid and prosperous heritage.</p>
+          <h2>Mission</h2>  <!-- Translation: Misión -->
+          <p>We contribute to improving the lives of our clients by facilitating access to innovative and personalized financial services that promote the building of a solid and prosperous heritage.</p>
+          <!-- Translation: Contribuimos a mejorar la vida de nuestros clientes facilitando el acceso a servicios financieros innovadores y personalizados que impulsan la construcción de un patrimonio sólido y próspero. -->
         </div>
         <div class="col-md-6">
-          <h2>Vision</h2>
+          <h2>Vision</h2>  <!-- Translation: Visión -->
           <p>To be the leading financial firm in Mexico and a reference in America, recognized for offering innovative solutions and an unwavering commitment to the success of our clients, providing them with a close and personalized experience that makes them feel at home.</p>
+          <!-- Translation: Ser la firma financiera líder en México y referente en América, reconocida por ofrecer soluciones innovadoras y un compromiso inquebrantable con el éxito de nuestros clientes, brindándoles una experiencia cercana y personalizada que los hace sentir como en casa. -->
         </div>
       </div>
     </div>
-
-    <div class="heading_container heading_center ">
-      <h2 class="p-4">
-        Our Values
-      </h2>
-    </div>
-
-    <section class="values-carousel">
-      <div class="container w-lg-50">
-        <div class="row">
-          <div class="col-md-12">
-            <div id="valuesCarousel" class="carousel slide" data-ride="carousel">
-              <ol class="carousel-indicators">
-                <li data-target="#valuesCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#valuesCarousel" data-slide-to="1"></li>
-                <li data-target="#valuesCarousel" data-slide-to="2"></li>
-                <li data-target="#valuesCarousel" data-slide-to="3"></li>
-                <li data-target="#valuesCarousel" data-slide-to="4"></li>
-                <li data-target="#valuesCarousel" data-slide-to="5"></li>
-                <li data-target="#valuesCarousel" data-slide-to="6"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active ">
-                  <div class="card mb-4 shadow mb-5 bg-white rounded">
-                    <div class="card-body">
-                      <h5 class="card-title">Social Responsibility</h5>
-                      <p class="card-text">We are committed to the well-being of the community and the environment, and we promote sustainable practices in all our operations.</p>
-                    </div>
+        <section class="team_section layout_padding bg-white">
+          
+          <div class="container">
+            <div class="heading_container heading_center">
+              <h2>
+                Our Team  <!-- Translation: Nuestro Equipo -->
+              </h2>
+              <p>
+                We present the engine behind Patrimonial Smart: our exceptional team. With experience in real estate, investments, insurance, and financial advice, we are dedicated to your success. Meet the faces of excellence that drive our services forward.
+              </p>
+              <!-- Translation: Presentamos el motor detrás de Patrimonial Smart: nuestro excepcional equipo. Con experiencia en bienes raíces, inversiones, seguros y asesoramiento financiero, estamos dedicados a tu éxito. Conoce a los rostros de excelencia que impulsan hacia adelante nuestros servicios. -->
+            </div>
+            <div class="row">
+              {% for socio in socios %}
+              <div class="col-md-4 col-sm-6 mx-auto">
+                <div class="box">
+                  <div class="img-box">
+                    <img src="{{socio.imagen.url}}" alt="">
                   </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card mb-4 shadow mb-5 bg-white rounded">
-                    <div class="card-body">
-                      <h5 class="card-title">Integrity</h5>
-                      <p class="card-text">We act with honesty, ethics, and responsibility in all our interactions, maintaining an unwavering commitment to truth and justice.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card mb-4 shadow mb-5 bg-white rounded">
-                    <div class="card-body">
-                      <h5 class="card-title">Innovation</h5>
-                      <p class="card-text">We constantly seek new and better ways to serve our clients, using cutting-edge technology and creative solutions.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card mb-4 shadow mb-5 bg-white rounded">
-                    <div class="card-body">
-                      <h5 class="card-title">Loyalty</h5>
-                      <p class="card-text">We cultivate relationships of trust and respect with our clients, employees, and partners, based on transparency, open communication, and mutual support.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card mb-4 shadow mb-5 bg-white rounded">
-                    <div class="card-body">
-                      <h5 class="card-title">Collaboration</h5>
-                      <p class="card-text">We value teamwork and collaboration, recognizing that together we achieve more than individually. We foster an inclusive and participatory environment where the diversity of ideas is celebrated, and the exchange of knowledge and experiences is encouraged.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="card mb-4 shadow mb-5 bg-white rounded">
-                    <div class="card-body">
-                      <h5 class="card-title">Service</h5>
-                      <p class="card-text">We are passionate about providing exceptional customer service, characterized by personalized attention, proactivity, and transparency.</p>
-                    </div>
+                  <div class="detail-box">
+                    <h5>
+                      {{socio.nombre}}
+                    </h5>
+                    <h6 class="">
+                      {{socio.puesto}}
+                    </h6>
                   </div>
                 </div>
               </div>
-              <a class="carousel-control-prev" href="#valuesCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only btn-primary">Previous</span>
-              </a>
-              <a class="carousel-control-next" style="color: black;" href="#valuesCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only btn-primary">Next</span>
-              </a>
+              {%endfor%}
+            
             </div>
           </div>
+        </section>
+        <div class="heading_container heading_center bg-white ">
+          <h3 class="p-4 pb-0">
+            Our Values  <!-- Translation: Nuestros Valores -->
+          </h3>
         </div>
-      </div>
+        <section class="values-carousel">
+          <div class="container-fluid p-0">
+            <div class="row">
+              <div class="col">
+                <div id="valuesCarousel" class="carousel slide text-center" data-ride="carousel">
+                  <div class="carousel-inner">
+                        <div class="carousel-item active w-100">
+                          <div class="card container-fluid p-1 bg-warning w-100" >
+                            <div class="card-body">
+                              <h5 class="card-title"></h5>
+                              <p class="card-text"><b>Social Responsibility </b>We are committed to the well-being of the community and the environment, and we promote sustainable practices.</p>
+                              <!-- Translation: Responsabilidad Social Estamos comprometidos con el bienestar de la comunidad y el medio ambiente, y promovemos prácticas sostenibles. -->
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Other values translations -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
     </section>
-  </section>
-{% endblock %}
+  {% endblock %}

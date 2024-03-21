@@ -161,6 +161,10 @@ a:focus {
       -ms-flex: 1;
           flex: 1;
 }
+.navbar img {
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
 .header_section .header_top .contact_nav a {
   color: #ffffff;

@@ -3,6 +3,7 @@
 
 <head>
   <!-- Basic -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile viewport -->
@@ -24,12 +25,13 @@
   <!-- Nice Select CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
   <!-- Font Awesome CSS -->
-  <link href="static/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="/static/css/font-awesome.min.css" rel="stylesheet" />
 
   <!-- Custom styles -->
   <link href="/static/css/style.css" rel="stylesheet" />
   <!-- Responsive styles -->
   <link href="/static/css/responsive.css" rel="stylesheet" />
+  
 </head>
 
 <body>
@@ -43,9 +45,9 @@
       <div class="header_bottom">
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container navbar-flex w-auto ">
-            <h1 class="navbar-brand text-wrap">
-              Patrimonial SMART & Asociados
-            </h1>
+            <div class="container mx-auto mt-1" style="background-color: ;">
+              <img class="" style="max-height: 4em;" src="/static/images/logo_b.png" alt="">
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class=""> </span>
             </button>
@@ -67,11 +69,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'contact_es'%}">Contáctanos</a>
                 </li>
-                <li class="nav-item">
+              <!-- <li class="nav-item">
                   <a class="nav-link" href="{% url 'faqs_es'%}">Preguntas frecuentes</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                  <select name="language" style="background: none; border: none;" id="languageSelect" class="nav-link">
+                  <select name="language" style="background: none; border: none;" id="languageSelect" class="nav-link col-sm-auto">
                     <option value="es" style="background: none; border: none;" class="nav-link">Español</option>
                     <option value="en" style="background: none; border: none;" class="nav-link">Inglés</option>
                   </select>
@@ -96,7 +98,7 @@
             </div>
             <div class="col-md-5 ">
               <div class="info_contact">
-                <a href="">
+                <a href="https://maps.app.goo.gl/HeJ73qPkPUXGJP8D8">
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <span>Ubicación</span>
                 </a>
@@ -108,10 +110,10 @@
             </div>
             <div class="col-md-4 ">
               <div class="social_box">
-                <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61554677347110"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/patrimonial_smart/"><i class="fa fa-instagram" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
@@ -134,11 +136,11 @@
               <div class="">
                 <h5>Enlaces útiles</h5>
                 <ul class="info_menu">
-                  <li><a href="index_es.html">Inicio</a></li>
-                  <li><a href="about_es.html">Sobre nosotros</a></li>
-                  <li><a href="service_es.html">Servicios</a></li>
-                  <li><a href="team_es.html">Equipo</a></li>
-                  <li class="mb-0"><a href="contact_es.html">Contáctanos</a></li>
+                  <li><a href="{% url 'index_es'%}">Inicio</a></li>
+                  <li><a href="{% url 'about_es' %}">Sobre nosotros</a></li>
+                  <li><a href="{% url 'services_es'%}">Servicios</a></li>
+                  <li><a href="{% url 'about_es'%}">Equipo</a></li>
+                  <li class="mb-0"><a href="{% url 'contact_es'%}">Contáctanos</a></li>
                 </ul>
               </div>
             </div>
@@ -157,23 +159,21 @@
     </footer>
     <!-- End of Footer section -->
 
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-    <!-- jQuery -->
-    <script src="/static/js/jquery-3.4.1.min.js"></script>
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="/static/js/bootstrap.js"></script>
-    <!-- Nice Select JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
-    <!-- Custom JS -->
-    <script src="/static/js/custom.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-    <!-- End of Google Map -->
-
+   <!-- jQery -->
+  <script src="/static/js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="/static/js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="/static/js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
     <script>
       // Get the select element
       var select = document.getElementById('languageSelect');

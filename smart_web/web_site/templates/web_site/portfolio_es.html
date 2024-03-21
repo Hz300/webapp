@@ -1,140 +1,172 @@
-{% extends "web_site/layout_es.html" %}
-{% block content%}
+{% extends "web_site/layout_es.html" %}  <!-- Extender el diseño principal -->
 
+{% block content%}  <!-- Inicio del bloque de contenido -->
+<script>
+    $(document).ready(function() {
+      $('.carousel').carousel({
+        // Opciones de Owl Carousel aquí
+      });
+    });
+</script>
 <div style="background-color: white;">
     <section class="team_section layout_padding">
         <div class="container">
-          <div class="heading_container heading_center">
-            <h2>
-              Nuestro Portafolio
-            </h2>
-            <p>
-              Construir y gestionar un portafolio de propiedades diversificado
-               requiere visión estratégica y gestión proactiva. Con Patrimonial Smart, 
-               nos aseguramos de que tus inversiones prosperen, 
-               ofreciendo soluciones personalizadas para optimizar tus activos inmobiliarios y asegurar un crecimiento a largo plazo.
-            </p>
-            <div class="search_bar">
-              <form action="{% url 'portfolio' %}" method="get">
-                  <input type="text" name="search" placeholder="Buscar...">
-                  <select name="location_filter" id="location_filter">
-                      <option value="">Todas las Ubicaciones</option>
-                      {% for city in cities %}
-                          <option value="{{ city }}">{{ city }}</option>
-                      {% endfor %}
-                  </select>
-                  <select name="property_type_filter" id="property_type_filter">
-                      <option value="">Tipo de Propiedad</option>
-                      {% for property_type in property_types %}
-                          <option value="{{ property_type }}">{{ property_type }}</option>
-                      {% endfor %}
-                  </select>
-                  <!-- Add more dropdowns similarly for other fields -->
-                  <button type="submit">Filtrar</button>
-              </form>
-          </div>
-          </div>
-          <div class="row">
-            {% for prop in props %}
-            <div class="col-md-4 col-sm-6 mx-auto">
-                <div class="box">
-                    <div class="img-box">
-                        <img src="{{ prop.imb_Image.url }}" alt="">
-                    </div>
-                    <div class="detail-box">
-                        <h5>{{ prop.imb_Name }}</h5>
-                        <h6>{{ prop.imb_State }}</h6>
-                        <h6>{{ prop.imb_Description }}</h6>
-                        <h6>{{ prop.imb_Price }}  {{ prop.imb_Currency }}</h6>
-                        <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#exampleModal{{ prop.imb_ID }}">
-                            View more
-                        </button>
-                    </div>
+            <div class="heading_container heading_center">
+                <h2>Nuestro Portafolio</h2>
+                <p>Construir y gestionar un portafolio de propiedades diversificado requiere visión estratégica y gestión proactiva. Con Patrimonial Smart, aseguramos que tus inversiones prosperen, ofreciendo soluciones personalizadas para optimizar tus activos inmobiliarios y garantizar un crecimiento a largo plazo.</p>
+                <div class="search_bar">
+                    <form action="{% url 'portfolio' %}" method="get">
+                        <input type="text" name="search" placeholder="Buscar...">
+                        <select name="location_filter" id="location_filter">
+                            <option value="">Todas las Ubicaciones</option>
+                            {% for city in cities %}
+                            <option value="{{ city }}">{{ city }}</option>
+                            {% endfor %}
+                        </select>
+                        <select name="property_type_filter" id="property_type_filter">
+                            <option value="">Tipo de Propiedad</option>
+                            {% for property_type in property_types %}
+                            <option value="{{ property_type }}">{{ property_type }}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit">Filtrar</button>
+                    </form>
                 </div>
             </div>
-            {% endfor %}
+            <div class="row">
+                {% for prop in props %}
+                <div class="col-md-4 col-sm-6 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                                <img src="{{ prop.propertyimage_set.first.image.url }}" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <h5>{{ prop.imb_Name }}</h5>
+                            <h6>{{ prop.imb_State }}</h6>
+                            <h6>{{ prop.imb_Description }}</h6>
+                            <h6>{{ prop.imb_Price }}  {{ prop.imb_Currency }}</h6>
+                            <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#exampleModal{{ prop.imb_ID }}">
+                                Ver más
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 </div>
 
-<!-- Modal -->
 {% for prop in props %}
 <div class="modal fade" id="exampleModal{{ prop.imb_ID }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ prop.imb_ID }}" aria-hidden="true">
-<div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel{{ prop.imb_ID }}">{{ prop.imb_Name }}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <img src="{{ prop.imb_Image.url }}" alt="" class="w-100">
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <th scope="row">Category</th>
-                        <td>{{ prop.imb_Category }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Name</th>
-                        <td>{{ prop.imb_Name }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">MLS</th>
-                        <td>{{ prop.imb_MLS }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Type</th>
-                        <td>{{ prop.imb_Type }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">City</th>
-                        <td>{{ prop.imb_City }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">State</th>
-                        <td>{{ prop.imb_State }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Area</th>
-                        <td>{{ prop.imb_Area }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Bedrooms</th>
-                        <td>{{ prop.imb_Bedrooms }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Bathrooms</th>
-                        <td>{{ prop.imb_Bathrooms }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Size</th>
-                        <td>{{ prop.imb_Size }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Price</th>
-                        <td>{{ prop.imb_Price }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Currency</th>
-                        <td>{{ prop.imb_Currency }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Description</th>
-                        <td>{{ prop.imb_Description }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="modal-footer">
-            <a href="{%url 'contact_es'%}" class="btn btn-primary" style="background-color: 0877bf;">Quiero saber Mas</a>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel{{ prop.imb_ID }}">{{ prop.imb_Name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                
+                <!-- Carrusel de imágenes -->
+                <div id="carouselExampleControls{{ prop.imb_ID }}" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                    {% for image in prop.propertyimage_set.all %}
+                      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{image.image.url}}" alt="" style="" class="w-100">
+                      </div>                
+                    {%endfor%}
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls{{ prop.imb_ID }}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Anterior</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleControls{{ prop.imb_ID }}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Siguiente</span>
+                      </a>
+                </div>
+            
+                
+
+                <!-- Fin del carrusel de imágenes -->
+
+
+
+
+
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Categoría</th>
+                            <td>{{ prop.imb_Category }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nombre</th>
+                            <td>{{ prop.imb_Name }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">MLS</th>
+                            <td>{{ prop.imb_MLS }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tipo</th>
+                            <td>{{ prop.imb_Type }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Ciudad</th>
+                            <td>{{ prop.imb_City }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Estado</th>
+                            <td>{{ prop.imb_State }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Área</th>
+                            <td>{{ prop.imb_Area }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Habitaciones</th>
+                            <td>{{ prop.imb_Bedrooms }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Baños</th>
+                            <td>{{ prop.imb_Bathrooms }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tamaño</th>
+                            <td>{{ prop.imb_Size }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Precio</th>
+                            <td>{{ prop.imb_Price }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Moneda</th>
+                            <td>{{ prop.imb_Currency }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Descripción</th>
+                            <td>{{ prop.imb_Description }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <a href="{%url 'contact_es'%}" class="btn btn-primary" style="background-color: 0877bf;">Quiero saber Más</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
         </div>
     </div>
-</div>
-</div>
-{% endfor %}
+    </div>
 
+{% endfor %}
+<script>
+  $(document).ready(function() {
+    $('#carouselExampleIndicators-').carousel({
+      // Opciones de Owl Carousel aquí
+    });
+  });
+</script>
 {% endblock %}

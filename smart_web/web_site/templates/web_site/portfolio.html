@@ -1,29 +1,35 @@
-<!-- Your existing HTML code -->
 {% extends "web_site/layout.html" %}
 {% block content%}
-
+<script>
+    $(document).ready(function() {
+      $('.carousel').carousel({
+        // Owl Carousel options here
+      });
+    });
+  </script>
 <div style="background-color: white;">
     <section class="team_section layout_padding">
         <div class="container">
             <div class="heading_container heading_center">
                 <h2>Our Portafolio</h2>
                 <p>Building and managing a diversified property portfolio requires strategic vision and proactive management. With Patrimonial Smart, we ensure that your investments thrive, offering customized solutions to optimize your real estate assets and ensure long-term growth.</p>
-                <div class="search_bar">
-                    <form action="{% url 'portfolio' %}" method="get">
+                <div class="search_bar form-row">
+                    <form action="{% url 'portfolio' %}" method="get" class="container-fluid">
                         <input type="text" name="search" placeholder="Buscar...">
                         <select name="location_filter" id="location_filter">
-                            <option value="">Todas las Ubicaciones</option>
+                            <option value="">Any City...</option>
                             {% for city in cities %}
                             <option value="{{ city }}">{{ city }}</option>
                             {% endfor %}
                         </select>
                         <select name="property_type_filter" id="property_type_filter">
-                            <option value="">Tipo de Propiedad</option>
+                            <option value="">Property Type</option>
                             {% for property_type in property_types %}
                             <option value="{{ property_type }}">{{ property_type }}</option>
                             {% endfor %}
                         </select>
-                        <!-- Add more dropdowns similarly for other fields -->
+                        <input class="form-control w-25" type="number" name="bedroom_filter_min" placeholder="Min Bedrooms" value="{{ bedroom_filter_min }}">
+                        <input class="form-control w-25" type="number" name="bedroom_filter_max" placeholder="Max Bedrooms" value="{{ bedroom_filter_max }}">
                         <button type="submit">Filtrar</button>
                     </form>
                 </div>
@@ -33,7 +39,7 @@
                 <div class="col-md-4 col-sm-6 mx-auto">
                     <div class="box">
                         <div class="img-box">
-                            <img src="{{ prop.imb_Image.url }}" alt="">
+                                <img src="{{ prop.propertyimage_set.first.image.url }}" alt="">
                         </div>
                         <div class="detail-box">
                             <h5>{{ prop.imb_Name }}</h5>
@@ -52,7 +58,6 @@
     </section>
 </div>
 
-<!-- Modal -->
 {% for prop in props %}
 <div class="modal fade" id="exampleModal{{ prop.imb_ID }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel{{ prop.imb_ID }}" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -64,7 +69,34 @@
                 </button>
             </div>
             <div class="modal-body">
-                <img src="{{ prop.imb_Image.url }}" alt="" class="w-100">
+                
+                <!-- image carousel -->
+                <div id="carouselExampleControls{{ prop.imb_ID }}" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                    {% for image in prop.propertyimage_set.all %}
+                      <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{image.image.url}}" alt="" style="" class="w-100">
+                      </div>                
+                    {%endfor%}
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls{{ prop.imb_ID }}" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleControls{{ prop.imb_ID }}" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                </div>
+            
+                
+
+                <!-- end image carousel -->
+
+
+
+
+
                 <table class="table">
                     <tbody>
                         <tr>
@@ -123,11 +155,19 @@
                 </table>
             </div>
             <div class="modal-footer">
+                <a href="{%url 'contact_es'%}" class="btn btn-primary" style="background-color: 0877bf;">Quiero saber Mas</a>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-</div>
-{% endfor %}
+    </div>
 
+{% endfor %}
+<script>
+  $(document).ready(function() {
+    $('#carouselExampleIndicators-').carousel({
+      // Owl Carousel options here
+    });
+  });
+</script>
 {% endblock %}
